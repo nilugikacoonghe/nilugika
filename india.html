@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>இந்தியா செய்திகள் - NEWSWEB.LK</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --green: #12a85a;
+            --dark: #031a10;
+            --panel: #08291a;
+            --white: #f8fff9;
+            --muted: #b9d8c3;
+            --line: #236744;
+        }
+
+        html {
+            width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: radial-gradient(ellipse at top, #0c3b24 0%, #031a10 48%, #010b06 100%);
+            color: var(--white);
+            font-family: 'Plus Jakarta Sans', 'Noto Sans Tamil', sans-serif;
+            min-height: 100vh;
+            padding: 24px;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            max-width: 1450px;
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(145deg, #f8fff9, #cdeed7);
+            border: 2px solid #20d875;
+            color: #08743a;
+            font-size: 28px;
+            box-shadow: 0 0 20px #12a85a22;
+        }
+
+        .logo h1 {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: .3px;
+            color: #f8fff9;
+            line-height: 1;
+        }
+
+        .logo p {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            color: #b4d7c0;
+            font-size: 11px;
+            margin-top: 5px;
+        }
+
+        .logo p span {
+            color: #45e88c;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: min(380px, 100%);
+            padding: 12px 17px;
+            border: 1px solid #31865a;
+            border-radius: 30px;
+            background: #052719;
+        }
+
+        .search input {
+            width: 100%;
+            min-width: 0;
+            outline: none;
+            border: 0;
+            background: transparent;
+            color: #fff;
+        }
+
+        .search input::placeholder {
+            color: #a8cdb5;
+        }
+
+        .live {
+            padding: 9px 14px;
+            background: #0d3822;
+            border: 1px solid var(--line);
+            border-radius: 25px;
+            color: #b7f5ca;
+            font-size: 11px;
+            font-weight: 800;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .live i {
+            width: 7px;
+            height: 7px;
+            background: #45e88c;
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            50% {
+                transform: scale(1.5);
+                opacity: .5;
+            }
+        }
+
+        /* MENU */
+
+        .menu-wrap {
+            margin-bottom: 20px;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            padding: 8px 0;
+            overflow-x: auto;
+        }
+
+        .menu-wrap ul {
+            list-style: none;
+            display: flex;
+            gap: 6px;
+            padding: 0;
+            margin: 0;
+            flex-wrap: nowrap;
+        }
+
+        .menu-wrap ul li {
+            list-style: none;
+            white-space: nowrap;
+        }
+
+        .menu-wrap ul li a {
+            display: block;
+            padding: 10px 16px;
+            border-radius: 24px;
+            color: #e4f5e9;
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid transparent;
+            transition: .2s;
+        }
+
+        .menu-wrap ul li a:hover {
+            background: #0a3a21;
+            border-color: var(--line);
+            color: white;
+        }
+
+        .menu-wrap ul li.active a {
+            background: #0fa75a;
+            color: white;
+            border-color: #0fa75a;
+            box-shadow: 0 0 15px #0fa75a55;
+        }
+
+        /* HEADING */
+
+        .heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 15px 0 22px;
+        }
+
+        .heading h2 {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: clamp(24px, 3vw, 35px);
+        }
+
+        .heading p {
+            margin-top: 9px;
+            color: var(--muted);
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .kicker {
+            color: #43e58a;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .count {
+            padding: 9px 14px;
+            background: #0d3822;
+            border: 1px solid var(--line);
+            border-radius: 25px;
+            color: #b7f5ca;
+            font-size: 12px;
+        }
+
+        /* FEATURED */
+
+        .featured {
+            display: grid;
+            grid-template-columns: 1.65fr 1fr;
+            gap: 17px;
+        }
+
+        .hero {
+            position: relative;
+            height: 470px;
+            overflow: hidden;
+            border: 1px solid #31865a;
+            border-radius: 19px;
+            cursor: pointer;
+            background: #000;
+        }
+
+        .hero img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s;
+        }
+
+        .hero:hover img {
+            transform: scale(1.04);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            padding: 27px;
+            background: linear-gradient(0deg, #010c07 0%, #010c07e8 24%, #010c0740 57%, transparent 100%);
+        }
+
+        .meta {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 11px;
+            color: #64ef9b;
+            margin-bottom: 9px;
+        }
+
+        .hero h3 {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: clamp(21px, 2.5vw, 31px);
+            line-height: 1.7;
+            color: white;
+        }
+
+        .hero p {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 12px;
+            line-height: 1.9;
+            margin-top: 8px;
+            color: #e1f0e6;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            margin-top: 14px;
+            background: #0fa75a;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 22px;
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 11px;
+            width: max-content;
+        }
+
+        .featured-side {
+            padding: 19px;
+            border: 1px solid var(--line);
+            border-radius: 19px;
+            background: #041b11;
+        }
+
+        .section-title {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 16px;
+            color: #86e8a6;
+            margin-bottom: 12px;
+        }
+
+        .side-item {
+            display: grid;
+            grid-template-columns: 1fr 100px;
+            gap: 12px;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #17432a;
+            cursor: pointer;
+        }
+
+        .side-item:last-child {
+            border-bottom: 0;
+        }
+
+        .side-item h3 {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 12px;
+            line-height: 1.8;
+            color: #e4f5e9;
+        }
+
+        .side-img {
+            height: 68px;
+            border-radius: 9px;
+            overflow: hidden;
+        }
+
+        .side-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* FILTER */
+
+        .section-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 26px 0 15px;
+        }
+
+        .section-bar h2 {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 20px;
+        }
+
+        .filters {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+        }
+
+        .filter {
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: #092d1b;
+            color: #c7e5d0;
+            font-size: 11px;
+            cursor: pointer;
+        }
+
+        .filter:hover,
+        .filter.active {
+            background: #10a75a;
+            color: #fff;
+        }
+
+        /* CARDS */
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .news-card {
+            overflow: hidden;
+            border: 1px solid #236744;
+            border-radius: 15px;
+            background: #f7fff9;
+            color: #102a1a;
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px #0005;
+        }
+
+        .card-image {
+            height: 175px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: #dcebe0;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s;
+        }
+
+        .card-image:hover img {
+            transform: scale(1.06);
+        }
+
+        .card-category {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #07572eea;
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 10px;
+        }
+
+        .card-body {
+            padding: 14px;
+        }
+
+        .card-date {
+            font-size: 10px;
+            color: #267347;
+            margin-bottom: 8px;
+        }
+
+        .card-body h3 {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 13px;
+            line-height: 1.9;
+            min-height: 52px;
+            margin-bottom: 9px;
+        }
+
+        .card-body p {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 11px;
+            line-height: 1.9;
+            color: #486452;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 12px;
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            color: #078343;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            text-align: center;
+            border-top: 1px solid var(--line);
+            margin-top: 30px;
+            padding: 22px 0;
+            color: #b3d1bd;
+            font-size: 12px;
+            line-height: 2;
+        }
+
+        /* MODAL */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #000d;
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-box {
+            width: min(850px, 100%);
+            max-height: 94vh;
+            overflow: auto;
+            background: #f7fff9;
+            color: #102a1a;
+            border-radius: 18px;
+            position: relative;
+        }
+
+        .modal-image {
+            height: min(48vh, 420px);
+            background: #031a10;
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .close {
+            position: absolute;
+            right: 13px;
+            top: 13px;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid #ffffff80;
+            background: #032416e8;
+            color: white;
+            font-size: 26px;
+        }
+
+        .modal-content {
+            padding: 25px;
+        }
+
+        .modal-category {
+            color: #078343;
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .modal-content h2 {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: clamp(20px, 3vw, 28px);
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .modal-content p {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 14px;
+            line-height: 2;
+            color: #345340;
+        }
+
+        .source-link {
+            display: inline-block;
+            margin-top: 20px;
+            background: #078343;
+            color: white;
+            border-radius: 25px;
+            padding: 12px 18px;
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 12px;
+        }
+
+        /* TABLET */
+
+        @media(max-width:1100px) {
+            .news-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .featured {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                height: 430px;
+            }
+        }
+
+        @media(max-width:900px) {
+            body {
+                padding: 16px;
+            }
+
+            .container {
+                width: 100%;
+            }
+
+            .header {
+                align-items: center;
+                gap: 14px;
+            }
+
+            .search {
+                width: min(340px, 100%);
+            }
+
+            .menu-wrap {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .menu-wrap ul {
+                width: max-content;
+                min-width: 100%;
+            }
+
+            .featured {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .hero {
+                height: 420px;
+            }
+
+            .featured-side {
+                padding: 17px;
+            }
+
+            .news-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 13px;
+            }
+
+            .card-image {
+                height: 155px;
+            }
+
+            .card-body {
+                padding: 12px;
+            }
+
+            .card-body h3 {
+                min-height: 0;
+            }
+
+            .footer {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+        }
+
+        /* MOBILE */
+
+        @media(max-width:750px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) auto;
+                align-items: center;
+                gap: 13px;
+                margin-bottom: 12px;
+                padding-bottom: 14px;
+            }
+
+            .logo {
+                grid-column: 1;
+                grid-row: 1;
+                min-width: 0;
+                gap: 9px;
+            }
+
+            .logo-icon {
+                width: 43px;
+                height: 43px;
+                font-size: 22px;
+            }
+
+            .logo h1 {
+                font-size: 20px;
+            }
+
+            .logo p {
+                font-size: 9px;
+                letter-spacing: .5px;
+                line-height: 1.6;
+            }
+
+            .live {
+                grid-column: 2;
+                grid-row: 1;
+                padding: 8px 10px;
+                font-size: 10px;
+            }
+
+            .search {
+                grid-column: 1 / -1;
+                grid-row: 2;
+                width: 100%;
+                min-height: 43px;
+                padding: 10px 14px;
+            }
+
+            .search input {
+                font-size: 13px;
+            }
+
+            .menu-wrap {
+                margin-bottom: 17px;
+                padding: 8px 0;
+                overflow: visible;
+            }
+
+            .menu-wrap ul {
+                width: 100%;
+                min-width: 0;
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 6px;
+            }
+
+            .menu-wrap ul li {
+                min-width: 0;
+                white-space: normal;
+            }
+
+            .menu-wrap ul li a {
+                height: 100%;
+                min-height: 39px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 8px 5px;
+                font-size: 11px;
+                line-height: 1.5;
+                overflow-wrap: anywhere;
+                border: 1px solid #236744;
+                border-radius: 9px;
+            }
+
+            .heading {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 11px;
+                margin: 12px 0 17px;
+            }
+
+            .heading h2 {
+                font-size: clamp(21px, 5.5vw, 29px);
+                line-height: 1.6;
+            }
+
+            .heading p {
+                font-size: 11px;
+                line-height: 1.8;
+            }
+
+            .count {
+                padding: 7px 11px;
+                font-size: 10px;
+            }
+
+            .featured {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 12px;
+            }
+
+            .hero {
+                width: 100%;
+                height: clamp(350px, 88vw, 440px);
+                border-radius: 14px;
+            }
+
+            .hero-overlay {
+                padding: 17px;
+                background: linear-gradient(0deg, #010c07 0%, #010c07ed 32%, #010c0760 68%, #010c0710 100%);
+            }
+
+            .hero h3 {
+                font-size: clamp(18px, 5vw, 24px);
+                line-height: 1.75;
+                overflow-wrap: anywhere;
+            }
+
+            .hero p {
+                font-size: 11px;
+                line-height: 1.8;
+            }
+
+            .hero-cta {
+                margin-top: 11px;
+                padding: 9px 13px;
+                font-size: 10px;
+            }
+
+            .featured-side {
+                padding: 14px;
+                border-radius: 14px;
+            }
+
+            .section-title {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .side-item {
+                grid-template-columns: minmax(0, 1fr) 82px;
+                gap: 9px;
+                padding: 10px 0;
+            }
+
+            .side-item h3 {
+                font-size: 11px;
+                line-height: 1.8;
+            }
+
+            .side-img {
+                height: 66px;
+            }
+
+            .side-item .meta {
+                font-size: 9px;
+                line-height: 1.6;
+            }
+
+            .section-bar {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 10px;
+                margin: 21px 0 13px;
+            }
+
+            .section-bar h2 {
+                font-size: 17px;
+                line-height: 1.7;
+            }
+
+            .filters {
+                width: 100%;
+                max-width: 100%;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                overflow-y: hidden;
+                gap: 7px;
+                padding: 2px 1px 8px;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .filter {
+                flex: 0 0 auto;
+                white-space: nowrap;
+                padding: 8px 11px;
+                font-size: 10px;
+            }
+
+            .news-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .news-card {
+                border-radius: 12px;
+            }
+
+            .card-image {
+                height: auto;
+                aspect-ratio: 4 / 3;
+            }
+
+            .card-category {
+                top: 7px;
+                left: 7px;
+                padding: 5px 8px;
+                font-size: 9px;
+            }
+
+            .card-body {
+                padding: 11px;
+            }
+
+            .card-date {
+                font-size: 9px;
+                line-height: 1.6;
+            }
+
+            .card-body h3 {
+                min-height: 0;
+                margin-bottom: 7px;
+                font-size: 11px;
+                line-height: 1.8;
+            }
+
+            .card-body p {
+                font-size: 10px;
+                line-height: 1.75;
+                -webkit-line-clamp: 4;
+            }
+
+            .read-more {
+                margin-top: 9px;
+                font-size: 10px;
+                line-height: 1.7;
+            }
+
+            .footer {
+                margin-top: 23px;
+                padding: 18px 5px;
+                font-size: 10px;
+            }
+
+            .modal {
+                padding: 10px;
+            }
+
+            .modal-box {
+                width: 100%;
+                max-height: 94dvh;
+                border-radius: 13px;
+            }
+
+            .modal-image {
+                height: clamp(170px, 45vw, 280px);
+            }
+
+            .modal-content {
+                padding: 17px;
+            }
+
+            .modal-content h2 {
+                font-size: 18px;
+                line-height: 1.8;
+            }
+
+            .modal-content p {
+                font-size: 12px;
+                line-height: 1.9;
+            }
+
+            .source-link {
+                padding: 10px 14px;
+                font-size: 10px;
+            }
+
+            .close {
+                width: 36px;
+                height: 36px;
+                right: 8px;
+                top: 8px;
+                font-size: 22px;
+            }
+        }
+
+        /* SMALL MOBILE */
+
+        @media(max-width:480px) {
+            body {
+                padding: 7px;
+            }
+
+            .header {
+                gap: 11px;
+            }
+
+            .logo-icon {
+                width: 39px;
+                height: 39px;
+                font-size: 20px;
+            }
+
+            .logo h1 {
+                font-size: 18px;
+            }
+
+            .logo p {
+                font-size: 8px;
+            }
+
+            .live {
+                padding: 7px 8px;
+                font-size: 9px;
+            }
+
+            .menu-wrap ul {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 5px;
+            }
+
+            .menu-wrap ul li a {
+                min-height: 37px;
+                font-size: 10px;
+            }
+
+            .hero {
+                height: 390px;
+            }
+
+            .hero-overlay {
+                padding: 14px;
+            }
+
+            .hero h3 {
+                font-size: 18px;
+            }
+
+            .hero p {
+                font-size: 10px;
+            }
+
+            .side-item {
+                grid-template-columns: minmax(0, 1fr) 74px;
+            }
+
+            .side-img {
+                height: 61px;
+            }
+
+            .news-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 14px;
+            }
+
+            .card-image {
+                aspect-ratio: 16 / 9;
+            }
+
+            .card-body {
+                padding: 13px;
+            }
+
+            .card-body h3 {
+                font-size: 13px;
+                line-height: 1.8;
+            }
+
+            .card-body p {
+                font-size: 11px;
+                line-height: 1.8;
+                -webkit-line-clamp: 4;
+            }
+
+            .read-more {
+                font-size: 11px;
+            }
+        }
+
+        @media(max-width:360px) {
+            .logo h1 {
+                font-size: 16px;
+            }
+
+            .logo p {
+                letter-spacing: 0;
+            }
+
+            .live {
+                font-size: 8px;
+                padding: 6px;
+            }
+
+            .hero {
+                height: 370px;
+            }
+
+            .hero h3 {
+                font-size: 16px;
+            }
+
+            .side-item {
+                grid-template-columns: minmax(0, 1fr) 68px;
+            }
+
+            .side-item h3 {
+                font-size: 10px;
+            }
+
+            .side-img {
+                height: 56px;
+            }
+        }
+
+        @media(prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <a class="logo" href="index.html">
+                <div class="logo-icon">🌍</div>
+                <div>
+                    <h1>NEWSWEB.LK</h1>
+                    <p>உண்மை <span>•</span> நம்பிக்கை <span>•</span> முன்னேற்றம்</p>
+                </div>
+            </a>
+
+            <form class="search" onsubmit="event.preventDefault();filterNews();">
+                <span>⌕</span>
+                <input id="searchInput" type="search" placeholder="இந்தியா செய்திகளைத் தேடுங்கள்...">
+            </form>
+
+            <div class="live"><i></i> LIVE INDIA</div>
+        </header>
+
+        <div class="menu-wrap">
+            <ul>
+                <li><a href="index.html">முகப்பு</a></li>
+                <li><a href="political.html">அரசியல்</a></li>
+                <li><a href="srilanka.html">இலங்கை</a></li>
+                <li><a href="porulaadharam.html">பொருளாதாரம்</a></li>
+                <li class="active"><a href="india.html">இந்தியா</a></li>
+                <li><a href="world.html">உலகம்</a></li>
+                <li><a href="vilayaattu.html">விளையாட்டு</a></li>
+                <li><a href="education.html">கல்வி</a></li>
+                <li><a href="weather.html">வானிலை</a></li>
+            </ul>
+        </div>
+
+        <section class="heading">
+            <div>
+                <div class="kicker">INDIA • REAL IMAGES • FULL NEWS</div>
+                <h2>இந்தியா செய்திகள் - அனைத்தும்</h2>
+                <p>இந்தியா தொடர்பான அனைத்து முக்கிய செய்திகளும் ஒரே இடத்தில்.</p>
+            </div>
+            <span class="count">15 செய்திகள்</span>
+        </section>
+
+        <!-- FEATURED -->
+        <section class="featured">
+
+            <article class="hero" onclick="openNews(0)">
+                <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1600&q=90"
+                    alt="">
+                <div class="hero-overlay">
+                    <div class="meta">இந்தியா • 23-10-2026</div>
+                    <h3>ரிசர்வ் வங்கி ரெப்போ வட்டி விகிதத்தை 5.50% ஆக உயர்த்தியது</h3>
+                    <p>பணவீக்கத்தைக் கட்டுப்படுத்தும் நோக்கில், 4 ஆண்டுகளுக்குப் பிறகு ரிசர்வ் வங்கி ரெப்போ விகிதத்தை
+                        உயர்த்தியுள்ளது. முழு அறிக்கையை rbi.org.in-ல் பார்க்கவும்.</p>
+                    <span class="hero-cta">முழுச் செய்தியைப் படிக்க →</span>
+                </div>
+            </article>
+
+            <aside class="featured-side">
+                <h2 class="section-title">முக்கிய இந்தியா செய்திகள்</h2>
+
+                <article class="side-item" onclick="openNews(1)">
+                    <div>
+                        <div class="meta">பொருளாதாரம் • 24-10-2026</div>
+                        <h3>இந்தியாவின் நேரடி அந்நிய முதலீடு 44% உயர்வு - $13.8 பில்லியன்</h3>
+                    </div>
+                    <div class="side-img"><img
+                            src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1000&q=85"
+                            alt="" loading="lazy"></div>
+                </article>
+
+                <article class="side-item" onclick="openNews(2)">
+                    <div>
+                        <div class="meta">விளையாட்டு • 23-10-2026</div>
+                        <h3>இந்தியா - நியூசிலாந்து கிரிக்கெட் - கோலி சதம்</h3>
+                    </div>
+                    <div class="side-img"><img
+                            src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1000&q=85"
+                            alt="" loading="lazy"></div>
+                </article>
+
+                <article class="side-item" onclick="openNews(3)">
+                    <div>
+                        <div class="meta">அரசியல் • 22-10-2026</div>
+                        <h3>டெல்லி பாராளுமன்ற குளிர்கால கூட்டத்தொடர் தொடங்கியது</h3>
+                    </div>
+                    <div class="side-img"><img
+                            src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1000&q=85"
+                            alt="" loading="lazy"></div>
+                </article>
+
+                <article class="side-item" onclick="openNews(4)">
+                    <div>
+                        <div class="meta">தொழில்நுட்பம் • 22-10-2026</div>
+                        <h3>UPI பரிவர்த்தனைகள் 20 பில்லியன் தாண்டியது - உலக சாதனை</h3>
+                    </div>
+                    <div class="side-img"><img
+                            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85"
+                            alt="" loading="lazy"></div>
+                </article>
+            </aside>
+
+        </section>
+
+        <!-- FILTER -->
+        <div class="section-bar">
+            <h2>அனைத்து இந்தியா செய்திகள்</h2>
+            <div class="filters">
+                <button class="filter active" data-category="all">அனைத்தும்</button>
+                <button class="filter" data-category="அரசியல்">அரசியல்</button>
+                <button class="filter" data-category="விளையாட்டு">விளையாட்டு</button>
+                <button class="filter" data-category="சினிமா">சினிமா</button>
+                <button class="filter" data-category="கல்வி">கல்வி</button>
+                <button class="filter" data-category="சுகாதாரம்">சுகாதாரம்</button>
+            </div>
+        </div>
+
+        <!-- ALL NEWS -->
+        <section class="news-grid" id="newsGrid">
+
+            <!-- 0 -->
+            <article class="news-card" data-title="ரிசர்வ் வங்கி ரெப்போ வட்டி விகிதத்தை 5.50% ஆக உயர்த்தியது"
+                data-category="இந்தியா">
+                <div class="card-image" onclick="openNews(0)">
+                    <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1600&q=90"
+                        alt="" loading="lazy">
+                    <span class="card-category">இந்தியா</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">23-10-2026</div>
+                    <h3>ரிசர்வ் வங்கி ரெப்போ வட்டி விகிதத்தை 5.50% ஆக உயர்த்தியது</h3>
+                    <p>பணவீக்கத்தைக் கட்டுப்படுத்தும் நோக்கில், 4 ஆண்டுகளுக்குப் பிறகு ரிசர்வ் வங்கி ரெப்போ விகிதத்தை
+                        உயர்த்தியுள்ளது. முழு அறிக்கையை rbi.org.in-ல் பார்க்கவும்.</p>
+                    <span class="read-more" onclick="openNews(0)">முழுச் செய்தியைப் படிக்க →</span>
+                </div>
+            </article>
+
+            <!-- 1 -->
+            <article class="news-card" data-title="இந்தியாவின் நேரடி அந்நிய முதலீடு 44% உயர்வு - $13.8 பில்லியன்"
+                data-category="பொருளாதாரம்">
+                <div class="card-image" onclick="openNews(1)">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1000&q=85"
+                        alt="" loading="lazy">
+                    <span class="card-category">பொருளாதாரம்</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">24-10-2026</div>
+                    <h3>இந்தியாவின் நேரடி அந்நிய முதலீடு 44% உயர்வு - $13.8 பில்லியன்</h3>
+                    <p>2026 ஏப்ரல்-ஆகஸ்ட் மாதங்களில் FDI கணிசமாக உயர்ந்துள்ளது. சிங்கப்பூர், ஜப்பான் முக்கிய காரணம்.</p>
+                    <span class="read-more" onclick="openNews(1)">முழுச் செய்தியைப் படிக்க →</span>
+                </div>
+            </article>
+
+            <!-- 2 -->
+            <article class="news-card" data-title="இந்தியா - நியூசிலாந்து கிரிக்கெட் - கோலி சதம்"
+                data-category="விளையாட்டு">
+                <div class="card-image" onclick="openNews(2)">
+                    <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1000&q=85"
+                        alt="" loading="lazy">
+                    <span class="card-category">விளையாட்டு</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">23-10-2026</div>
+                    <h3>இந்தியா - நியூசிலாந்து கிரிக்கெட் - கோலி சதம்</h3>
+                    <p>மும்பை வான்கடே மைதானத்தில் இந்திய அணி அபார வெற்றி. விராட் கோலி 85-வது சதம் அடித்தார்.</p>
+                    <span class="read-more" onclick="openNews(2)">முழுச் செய்தியைப் படிக்க →</span>
+                </div>
+            </article>
+
+            <!-- 3 -->
+            <article class="news-card" data-title="டெல்லி பாராளுமன்ற குளிர்கால கூட்டத்தொடர் தொடங்கியது"
+                data-category="அரசியல்">
+                <div class="card-image" onclick="openNews(3)">
+                    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1000&q=85"
+                        alt="" loading="lazy">
+                    <span class="card-category">அரசியல்</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">22-10-2026</div>
+                    <h3>டெல்லி பாராளுமன்ற குளிர்கால கூட்டத்தொடர் தொடங்கியது</h3>
+                    <p>நாடாளுமன்றத்தில் முக்கிய மசோதாக்கள் தாக்கல். புதிய சட்டங்கள் குறித்து விவாதம்.</p>
+                    <span class="read-more" onclick="openNews(3)">முழுச் செய்தியைப் படிக்க →</span>
+                </div>
+            </article>
+
+            <!-- 4 -->
+            <article class="news-card" data-title="UPI பரிவர்த்தனைகள் 20 பில்லியன் தாண்டியது - உலக சாதனை"
+                data-category="தொழில்நுட்பம்">
+                <div class="card-image" onclick="openNews(4)">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85"
+                        alt="" loading="lazy">
+                    <span class="card-category">தொழில்நுட்பம்</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">22-10-2026</div>
+                    <h3>UPI பரிவர்த்தனைகள் 20 பில்லியன் தாண்டியது - உலக சாதனை</h3>
+                    <p>இந்தியாவின் UPI உலகின் மிகப்பெரிய டிஜிட்டல் பணப்பரிமாற்றமாக மாறியுள்ளது.</p>
+                    <span class="read-more" onclick="openNews(4)">முழுச் செய்தியைப் படிக்க →</span>
+                </div>
+            </article>
+
+            <!-- 5 -->
+            <article class="news-card" data-title="மும்பை சென்செக்ஸ் 80,000 புள்ளிகளை தாண்டியது"
+                data-category="பொருளாதாரம்">
+                <div class="card-image" onclick="openNews(5)">
+                    <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=1000&q=85"
+                        alt="" loading="lazy">
+                    <span class="card-category">பொருளாதாரம்</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">23-10-2026</div>
+                    <h3>மும்பை சென்செக்ஸ் 80,000 புள்ளிகளை தாண்டியது</h3>
+                    <p>உள்ளூர் முதலீட்டாளர்களின் ஆதரவால் பங்குச்சந்தை புதிய உச்சத்தை தொட்டது.</p>
+                    <span class="read-more" onclick="openNews(5)">முழுச் செய்தியைப் படிக்க →</span>
+                </div>
+            </article>
+
+            <!-- 6 -->
+            <article class="news-card" data-title="ஷாருக்கானின் புதிய படம் ரூ.1000 கோடி வசூல்" data-category="சினிமா">
+                <div class="card-image" onclick="openNews(6)">
+                    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=85"
+                        alt="" loading="lazy">
+                    <span class="card-category">சினிமா</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">21-10-2026</div>
+                    <h3>ஷாருக்கானின் புதிய படம் ரூ.1000 கோடி வசூல்</h3>
+                    <p>பாலிவுட் படம் உலகளவில் வசூல் சாதனை படைத்து வருகிறது. ரசிகர்கள் கொண்டாட்டம்.</p>
+                    <span class="read-more" onclick="openNews(6)">முழுச் செய்தியைப் படிக்க →</span>
+                </div>
+            </article>
+
+            <!-- 7 -->
+            <article class="news-card" data-title="இஸ்ரோவின் GISAT-2 செயற்கைக்கோள் வெற்றிகரமாக விண்ணில்"
+                data-category="தொழில்நுட்பம்">
+                <div class="card-image" onclick="openNews(7)">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=85"
+                        alt="" loading="lazy">
+                    <span class="card-category">தொழில்நுட்பம்</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">19-10-2026</div>
+                    <h3>இஸ்ரோவின் GISAT-2 செயற்கைக்கோள் வெற்றிகரமாக விண்ணில்</h3>
+                    <p>இஸ்ரோ தனது புதிய கண்காணிப்பு செயற்கைக்கோளை வெற்றிகரமாக செலுத்தியது.</p>
+                    <span class="read-more" onclick="openNews(7)">முழுச் செய்தியைப் படிக்க →</span>
+                </div>
+            </article>
+
+            <!-- 8 -->
+            <article class="news-card" data-title="சென்னை - டெல்லி வந்தே பாரத் ரயில் அறிமுகம்" data-category="இந்தியா">
+                <div class="card-image" onclick="openNews(8)">
+                    <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1000&q=85"
+                        alt="" loading="lazy">
+                    <span class="card-category">இந்தியா</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">20-10-2026</div>
+                    <h3>சென்னை - டெல்லி வந்தே பாரத் ரயில் அறிமுகம்</h3>
+                    <p>பயண நேரம் 6 மணி நேரம் குறையும். அதிநவீன வசதிகளுடன் ரயில்.</p>
+                    <span class="read-more" onclick="openNews(8)">முழுச் செய்தியைப் படிக்க →</span>
+                </div>
+            </article>
+
+            <!-- 9 -->
+            <article class="news-card" data-title="தமிழக மீனவர்கள் பிரச்சினை - மத்திய அரசு பேச்சு"
+                data-category="அரசியல்">
+                <div class="card-image" onclick="openNews(9)">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=85"
+                        alt="" loading="lazy">
+                    <span class="card-category">அரசியல்</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">18-10-2026</div>
+                    <h3>தமிழக மீனவர்கள் பிரச்சினை - மத்திய அரசு பேச்சு</h3>
+                    <p>மீனவர்கள் விடுதலை தொடர்பாக இலங்கையுடன் பேச்சுவார்த்தை.</p>
+                    <span class="read-more" onclick="openNews(9)">முழுச் செய்தியைப் படிக்க →</span>
+                </div>
+            </article>
+
+            <!-- 10 -->
+            <article class="news-card" data-title="CBSE 10-ம் வகுப்பு தேர்வு அட்டவணை வெளியீடு" data-category="கல்வி">
+                <div class="card-image" onclick="openNews(10)">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=85"
+                        alt="" loading="lazy">
+                    <span class="card-category">கல்வி</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">18-10-2026</div>
+                    <h3>CBSE 10-ம் வகுப்பு தேர்வு அட்டவணை வெளியீடு</h3>
+                    <p>2027-ம் ஆண்டுக்கான பொதுத்தேர்வு அட்டவணையை CBSE வெளியிட்டுள்ளது.</p>
+                    <span class="read-more" onclick="openNews(10)">முழுச் செய்தியைப் படிக்க →</span>
+                </div>
+            </article>
+
+            <!-- 11 -->
+            <article class="news-card" data-title="இந்தியாவில் டெங்கு காய்ச்சல் கட்டுப்பாடு - சுகாதாரத்துறை"
+                data-category="சுகாதாரம்">
+                <div class="card-image" onclick="openNews(11)">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=85"
+                        alt="" loading="lazy">
+                    <span class="card-category">சுகாதாரம்</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">17-10-2026</div>
+                    <h3>இந்தியாவில் டெங்கு காய்ச்சல் கட்டுப்பாடு - சுகாதாரத்துறை</h3>
+                    <p>மழைக்காலத்தில் டெங்கு பரவலை தடுக்க மத்திய சுகாதாரத்துறை புதிய வழிகாட்டுதல்களை வெளியிட்டுள்ளது.
+                    </p>
+                    <span class="read-more" onclick="openNews(11)">முழுச் செய்தியைப் படிக்க →</span>
+                </div>
+            </article>
+
+            <!-- 12 -->
+            <article class="news-card" data-title="வட இந்தியாவில் கடும் குளிர் - டெல்லியில் மூடுபனி"
+                data-category="வானிலை">
+                <div class="card-image" onclick="openNews(12)">
+                    <img src="https://images.unsplash.com/photo-1534088568595-a066f410bcda?auto=format&fit=crop&w=1000&q=85"
+                        alt="" loading="lazy">
+                    <span class="card-category">வானிலை</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">17-10-2026</div>
+                    <h3>வட இந்தியாவில் கடும் குளிர் - டெல்லியில் மூடுபனி</h3>
+                    <p>டெல்லி, பஞ்சாப், ஹரியானாவில் வெப்பநிலை 5 டிகிரிக்கு கீழ் குறைந்தது.</p>
+                    <span class="read-more" onclick="openNews(12)">முழுச் செய்தியைப் படிக்க →</span>
+                </div>
+            </article>
+
+            <!-- 13 -->
+            <article class="news-card" data-title="உலகக் கோப்பை கிரிக்கெட் 2027 - இந்தியா தயார்"
+                data-category="விளையாட்டு">
+                <div class="card-image" onclick="openNews(13)">
+                    <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1000&q=85"
+                        alt="" loading="lazy">
+                    <span class="card-category">விளையாட்டு</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">16-10-2026</div>
+                    <h3>உலகக் கோப்பை கிரிக்கெட் 2027 - இந்தியா தயார்</h3>
+                    <p>2027 உலகக் கோப்பைக்கான இந்திய அணி தயாராகி வருகிறது.</p>
+                    <span class="read-more" onclick="openNews(13)">முழுச் செய்தியைப் படிக்க →</span>
+                </div>
+            </article>
+
+            <!-- 14 -->
+            <article class="news-card" data-title="சென்னை புத்தக கண்காட்சி 2027 தேதி அறிவிப்பு" data-category="கல்வி">
+                <div class="card-image" onclick="openNews(14)">
+                    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=1000&q=85"
+                        alt="" loading="lazy">
+                    <span class="card-category">கல்வி</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">16-10-2026</div>
+                    <h3>சென்னை புத்தக கண்காட்சி 2027 தேதி அறிவிப்பு</h3>
+                    <p>50-வது சென்னை புத்தக கண்காட்சி ஜனவரியில் நடைபெறும் என அறிவிப்பு.</p>
+                    <span class="read-more" onclick="openNews(14)">முழுச் செய்தியைப் படிக்க →</span>
+                </div>
+            </article>
+
+        </section>
+
+        <footer class="footer">
+            <strong>NEWSWEB.LK - INDIA SEITHIGAL</strong>
+            <br>
+            உண்மை • நம்பிக்கை • முன்னேற்றம்
+            <br>
+            © 2026 NEWSWEB.LK
+        </footer>
+
+    </div>
+
+    <!-- POPUP -->
+    <div class="modal" id="newsModal" onclick="closeOutside(event)">
+        <div class="modal-box">
+            <button class="close" onclick="closeNews()">&times;</button>
+
+            <div class="modal-image">
+                <img id="modalImage" src="" alt="">
+            </div>
+
+            <div class="modal-content">
+                <div class="modal-category" id="modalCategory"></div>
+                <h2 id="modalTitle"></h2>
+                <div class="meta" id="modalDate" style="color:#267347"></div>
+                <p id="modalDescription"></p>
+                <a id="modalSource" class="source-link" href="#" target="_blank" rel="noopener noreferrer">
+                    அதிகாரப்பூர்வ மூலத்தைப் பார்க்கவும் ↗
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const newsData = [
+            {
+                title: 'ரிசர்வ் வங்கி ரெப்போ வட்டி விகிதத்தை 5.50% ஆக உயர்த்தியது',
+                category: 'இந்தியா',
+                date: '23-10-2026',
+                image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1600&q=90',
+                description: 'பணவீக்கத்தைக் கட்டுப்படுத்தும் நோக்கில், 4 ஆண்டுகளுக்குப் பிறகு ரிசர்வ் வங்கி ரெப்போ விகிதத்தை உயர்த்தியுள்ளது. முழு அறிக்கையை rbi.org.in-ல் பார்க்கவும்.',
+                source: 'https://www.rbi.org.in/'
+            },
+            {
+                title: 'இந்தியாவின் நேரடி அந்நிய முதலீடு 44% உயர்வு - $13.8 பில்லியன்',
+                category: 'பொருளாதாரம்',
+                date: '24-10-2026',
+                image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1000&q=85',
+                description: '2026 ஏப்ரல்-ஆகஸ்ட் மாதங்களில் FDI கணிசமாக உயர்ந்துள்ளது. சிங்கப்பூர், ஜப்பான் முக்கிய காரணம்.',
+                source: 'https://www.rbi.org.in/'
+            },
+            {
+                title: 'இந்தியா - நியூசிலாந்து கிரிக்கெட் - கோலி சதம்',
+                category: 'விளையாட்டு',
+                date: '23-10-2026',
+                image: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1000&q=85',
+                description: 'மும்பை வான்கடே மைதானத்தில் இந்திய அணி அபார வெற்றி. விராட் கோலி 85-வது சதம் அடித்தார்.',
+                source: 'https://www.bcci.tv/'
+            },
+            {
+                title: 'டெல்லி பாராளுமன்ற குளிர்கால கூட்டத்தொடர் தொடங்கியது',
+                category: 'அரசியல்',
+                date: '22-10-2026',
+                image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1000&q=85',
+                description: 'நாடாளுமன்றத்தில் முக்கிய மசோதாக்கள் தாக்கல். புதிய சட்டங்கள் குறித்து விவாதம்.',
+                source: 'https://sansad.in/'
+            },
+            {
+                title: 'UPI பரிவர்த்தனைகள் 20 பில்லியன் தாண்டியது - உலக சாதனை',
+                category: 'தொழில்நுட்பம்',
+                date: '22-10-2026',
+                image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85',
+                description: 'இந்தியாவின் UPI உலகின் மிகப்பெரிய டிஜிட்டல் பணப்பரிமாற்றமாக மாறியுள்ளது.',
+                source: 'https://www.npci.org.in/'
+            },
+            {
+                title: 'மும்பை சென்செக்ஸ் 80,000 புள்ளிகளை தாண்டியது',
+                category: 'பொருளாதாரம்',
+                date: '23-10-2026',
+                image: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=1000&q=85',
+                description: 'உள்ளூர் முதலீட்டாளர்களின் ஆதரவால் பங்குச்சந்தை புதிய உச்சத்தை தொட்டது.',
+                source: 'https://www.nseindia.com/'
+            },
+            {
+                title: 'ஷாருக்கானின் புதிய படம் ரூ.1000 கோடி வசூல்',
+                category: 'சினிமா',
+                date: '21-10-2026',
+                image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=85',
+                description: 'பாலிவுட் படம் உலகளவில் வசூல் சாதனை படைத்து வருகிறது. ரசிகர்கள் கொண்டாட்டம்.',
+                source: 'https://www.pib.gov.in/'
+            },
+            {
+                title: 'இஸ்ரோவின் GISAT-2 செயற்கைக்கோள் வெற்றிகரமாக விண்ணில்',
+                category: 'தொழில்நுட்பம்',
+                date: '19-10-2026',
+                image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=85',
+                description: 'இஸ்ரோ தனது புதிய கண்காணிப்பு செயற்கைக்கோளை வெற்றிகரமாக செலுத்தியது.',
+                source: 'https://www.isro.gov.in/'
+            },
+            {
+                title: 'சென்னை - டெல்லி வந்தே பாரத் ரயில் அறிமுகம்',
+                category: 'இந்தியா',
+                date: '20-10-2026',
+                image: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1000&q=85',
+                description: 'பயண நேரம் 6 மணி நேரம் குறையும். அதிநவீன வசதிகளுடன் ரயில்.',
+                source: 'https://indianrailways.gov.in/'
+            },
+            {
+                title: 'தமிழக மீனவர்கள் பிரச்சினை - மத்திய அரசு பேச்சு',
+                category: 'அரசியல்',
+                date: '18-10-2026',
+                image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=85',
+                description: 'மீனவர்கள் விடுதலை தொடர்பாக இலங்கையுடன் பேச்சுவார்த்தை.',
+                source: 'https://www.mea.gov.in/'
+            },
+            {
+                title: 'CBSE 10-ம் வகுப்பு தேர்வு அட்டவணை வெளியீடு',
+                category: 'கல்வி',
+                date: '18-10-2026',
+                image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=85',
+                description: '2027-ம் ஆண்டுக்கான பொதுத்தேர்வு அட்டவணையை CBSE வெளியிட்டுள்ளது.',
+                source: 'https://www.cbse.gov.in/'
+            },
+            {
+                title: 'இந்தியாவில் டெங்கு காய்ச்சல் கட்டுப்பாடு - சுகாதாரத்துறை',
+                category: 'சுகாதாரம்',
+                date: '17-10-2026',
+                image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=85',
+                description: 'மழைக்காலத்தில் டெங்கு பரவலை தடுக்க மத்திய சுகாதாரத்துறை புதிய வழிகாட்டுதல்களை வெளியிட்டுள்ளது.',
+                source: 'https://www.mohfw.gov.in/'
+            },
+            {
+                title: 'வட இந்தியாவில் கடும் குளிர் - டெல்லியில் மூடுபனி',
+                category: 'வானிலை',
+                date: '17-10-2026',
+                image: 'https://images.unsplash.com/photo-1534088568595-a066f410bcda?auto=format&fit=crop&w=1000&q=85',
+                description: 'டெல்லி, பஞ்சாப், ஹரியானாவில் வெப்பநிலை 5 டிகிரிக்கு கீழ் குறைந்தது.',
+                source: 'https://mausam.imd.gov.in/'
+            },
+            {
+                title: 'உலகக் கோப்பை கிரிக்கெட் 2027 - இந்தியா தயார்',
+                category: 'விளையாட்டு',
+                date: '16-10-2026',
+                image: 'https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1000&q=85',
+                description: '2027 உலகக் கோப்பைக்கான இந்திய அணி தயாராகி வருகிறது.',
+                source: 'https://www.icc-cricket.com/'
+            },
+            {
+                title: 'சென்னை புத்தக கண்காட்சி 2027 தேதி அறிவிப்பு',
+                category: 'கல்வி',
+                date: '16-10-2026',
+                image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=1000&q=85',
+                description: '50-வது சென்னை புத்தக கண்காட்சி ஜனவரியில் நடைபெறும் என அறிவிப்பு.',
+                source: 'https://www.bapasi.com/'
+            }
+        ];
+
+        function openNews(i) {
+            const d = newsData[i];
+            document.getElementById('modalImage').src = d.image;
+            document.getElementById('modalCategory').textContent = d.category;
+            document.getElementById('modalTitle').textContent = d.title;
+            document.getElementById('modalDate').textContent = 'தேதி: ' + d.date;
+            document.getElementById('modalDescription').textContent = d.description;
+            document.getElementById('modalSource').href = d.source;
+            document.getElementById('newsModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeNews() {
+            document.getElementById('newsModal').classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        function closeOutside(e) {
+            if (e.target.id === 'newsModal') {
+                closeNews();
+            }
+        }
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                closeNews();
+            }
+        });
+
+        let sel = 'all';
+
+        function filterNews() {
+            const q = document.getElementById('searchInput').value.trim().toLowerCase();
+
+            document.querySelectorAll('.news-card').forEach(c => {
+                const t = c.dataset.title.toLowerCase();
+                const cat = c.dataset.category;
+                const d = c.querySelector('p').textContent.toLowerCase();
+
+                const show = (t.includes(q) || d.includes(q)) &&
+                    (sel === 'all' || cat === sel);
+
+                c.style.display = show ? '' : 'none';
+            });
+        }
+
+        document.getElementById('searchInput').addEventListener('input', filterNews);
+
+        document.querySelectorAll('.filter').forEach(b => {
+            b.addEventListener('click', () => {
+                document.querySelectorAll('.filter').forEach(x => x.classList.remove('active'));
+                b.classList.add('active');
+                sel = b.dataset.category;
+                filterNews();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

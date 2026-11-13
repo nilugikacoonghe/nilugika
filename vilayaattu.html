@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>இலங்கை விளையாட்டு செய்திகள் | NEWSWEB.LK</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+Tamil:wght@400;600;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #052e1a;
+      --bg2: #08432a;
+      --green: #16a34a;
+      --green-bright: #22c55e;
+      --green-dark: #0b5a2b;
+      --white: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans Tamil', 'Lato', sans-serif;
+      background: radial-gradient(circle at 20% 0%, var(--bg2), var(--bg) 60%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* HEADER */
+
+    header {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 20px 24px 8px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: max-content;
+    }
+
+    .logo-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      font-size: 27px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--green);
+      box-shadow: 0 8px 20px rgba(34, 197, 94, .35);
+    }
+
+    .logo h1 {
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
+      font-size: 24px;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+
+    .logo p {
+      font-size: 12px;
+      color: #a7e3bd;
+      margin-top: 2px;
+    }
+
+    /* MENU */
+
+    nav {
+      max-width: 1240px;
+      margin: 10px auto 25px;
+      padding: 0 24px;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 50px;
+      padding: 7px 12px;
+    }
+
+    nav li a {
+      display: block;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #060807;
+      transition: .25s;
+    }
+
+    nav li a:hover {
+      background: #e8f5e9;
+    }
+
+    nav li.active a {
+      background: var(--green-bright);
+      color: #04230f;
+    }
+
+    /* HERO SLIDER */
+
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px 50px;
+    }
+
+    .heading {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      font-weight: 1000;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .heading::before {
+      content: "";
+      width: 10px;
+      height: 26px;
+      border-radius: 5px;
+      background: var(--green-bright);
+    }
+
+    .hero {
+      position: relative;
+      height: min(640px, 78vh);
+      min-height: 480px;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, .55);
+      background: #031c10;
+      border: 1px solid rgba(255, 255, 255, .12);
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 42% 58%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .4s ease, visibility .4s;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 2;
+    }
+
+    /* LEFT CONTENT */
+
+    .left {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .left .blur {
+      position: absolute;
+      inset: -30px;
+      background-size: cover;
+      background-position: center;
+      filter: blur(22px);
+      transform: scale(1.1);
+    }
+
+    .left::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg,
+          rgba(3, 40, 22, .9),
+          rgba(8, 67, 42, .7));
+    }
+
+    .left .txt {
+      position: relative;
+      z-index: 3;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 0 40px 44px;
+      width: calc(100% + 140px);
+    }
+
+    .tag {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      background: var(--green-bright);
+      color: #04230f;
+      width: max-content;
+      padding: 5px 14px;
+      border-radius: 30px;
+    }
+
+    .title {
+      font-size: clamp(26px, 3.4vw, 46px);
+      font-weight: 800;
+      line-height: 1.35;
+      max-width: 520px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, .6);
+    }
+
+    .summary {
+      margin-top: 20px;
+      max-width: 300px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #e2f7ea;
+    }
+
+    .date {
+      margin-top: 12px;
+      font-size: 12.5px;
+      color: #a7e3bd;
+    }
+
+    .more {
+      margin-top: 22px;
+      width: max-content;
+      font-size: 13px;
+      font-weight: 700;
+      background: var(--green-bright);
+      color: #04230f;
+      padding: 10px 22px;
+      border-radius: 30px;
+      transition: .25s;
+    }
+
+    .more:hover {
+      background: #fff;
+      transform: translateX(4px);
+    }
+
+    /* RIGHT IMAGE */
+
+    .right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.08);
+      transition: transform 2.4s ease;
+      background: #0b3d25;
+    }
+
+    .slide.active .right img {
+      transform: scale(1);
+    }
+
+    .right::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,
+          rgba(245, 252, 249, .55),
+          transparent 38%);
+    }
+
+    /* COUNTER */
+
+    .counter {
+      position: absolute;
+      top: 20px;
+      right: 22px;
+      z-index: 10;
+      color: #04230f;
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+      font-weight: 900;
+      background: var(--green-bright);
+      padding: 6px 14px;
+      border-radius: 30px;
+    }
+
+    /* DOTS */
+
+    .dots {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .dots span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .55);
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .dots span.on {
+      background: var(--green-bright);
+      height: 18px;
+      border-radius: 6px;
+    }
+
+    /* ARROWS */
+
+    .arrows {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      z-index: 10;
+      display: flex;
+      gap: 10px;
+    }
+
+    .arrows button {
+      width: 42px;
+      height: 42px;
+      border: none;
+      cursor: pointer;
+      border-radius: 50%;
+      background: var(--green-bright);
+      color: #04230f;
+      font-size: 18px;
+      font-weight: 900;
+      transition: .25s;
+    }
+
+    .arrows button:hover {
+      background: #fff;
+    }
+
+    /* PROGRESS */
+
+    .progress {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 5px;
+      width: 0;
+      background: var(--green-bright);
+      z-index: 11;
+    }
+
+    /* MOBILE VIEW */
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .hero {
+      touch-action: pan-y;
+    }
+
+    @media(hover:none) {
+      .more:hover {
+        transform: none;
+      }
+
+      .arrows button:hover {
+        background: var(--green-bright);
+      }
+    }
+
+    @media(max-width:850px) {
+
+      header {
+        padding: 14px 14px 6px;
+      }
+
+      .logo-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 23px;
+      }
+
+      .logo h1 {
+        font-size: 21px;
+      }
+
+      .logo p {
+        font-size: 11px;
+      }
+
+      /* Mobile menu */
+
+      nav {
+        padding: 0 14px;
+      }
+
+      nav ul {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        border-radius: 30px;
+        padding: 6px 8px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      nav ul::-webkit-scrollbar {
+        display: none;
+      }
+
+      nav li {
+        flex: none;
+      }
+
+      nav li a {
+        white-space: nowrap;
+        padding: 10px 14px;
+        min-height: 40px;
+      }
+
+      .wrap {
+        padding: 0 14px 36px;
+      }
+
+      .heading {
+        font-size: 18px;
+        margin: 16px 0 14px;
+        gap: 10px;
+      }
+
+      /* Mobile hero */
+
+      .hero {
+        height: auto;
+        aspect-ratio: auto;
+        height: calc(100vh - 190px);
+        height: calc(100svh - 190px);
+        min-height: 520px;
+        max-height: 680px;
+        border-radius: 18px;
+      }
+
+      .slide {
+        grid-template-columns: 1fr;
+        grid-template-rows: 46% 54%;
+      }
+
+      /* Image top */
+
+      .right {
+        order: -1;
+      }
+
+      /* Text bottom */
+
+      .left {
+        order: 1;
+      }
+
+      .right::after {
+        background: linear-gradient(0deg,
+            rgba(3, 40, 22, .55),
+            transparent 40%);
+      }
+
+      .left .txt {
+        padding: 18px 18px 22px;
+        justify-content: flex-start;
+        overflow: hidden;
+      }
+
+      .tag {
+        margin-bottom: 10px;
+        font-size: 11px;
+        padding: 4px 12px;
+      }
+
+      .title {
+        font-size: 21px;
+        line-height: 1.5;
+        max-width: 100%;
+      }
+
+      .summary {
+        margin-top: 10px;
+        font-size: 13.5px;
+        line-height: 1.7;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .date {
+        margin-top: 8px;
+      }
+
+      .more {
+        margin-top: 14px;
+        padding: 12px 22px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .counter {
+        top: 14px;
+        right: 14px;
+        font-size: 12px;
+        padding: 5px 12px;
+      }
+
+      .dots {
+        display: none;
+      }
+
+      .arrows {
+        top: calc(46% - 54px);
+        bottom: auto;
+        right: 14px;
+      }
+
+      .arrows button {
+        width: 44px;
+        height: 44px;
+      }
+    }
+
+    @media(max-width:380px) {
+
+      .logo p {
+        display: none;
+      }
+
+      .title {
+        font-size: 19px;
+      }
+
+      .summary {
+        -webkit-line-clamp: 2;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LOGO -->
+
+  <header>
+    <a class="logo" href="index.html">
+
+      <div class="logo-icon">🌍</div>
+
+      <div>
+        <h1>NEWSWEB.LK</h1>
+        <p>உண்மை • நம்பிக்கை • முன்னேற்றம்</p>
+      </div>
+
+    </a>
+  </header>
+
+  <!-- MENU -->
+
+  <nav>
+    <ul>
+      <li><a href="index.html">முகப்பு</a></li>
+      <li><a href="political.html">அரசியல்</a></li>
+      <li><a href="srilanka.html">இலங்கை</a></li>
+      <li><a href="porulaadharam.html">பொருளாதாரம்</a></li>
+      <li><a href="india.html">இந்தியா</a></li>
+      <li><a href="world.html">உலகம்</a></li>
+      <li class="active"><a href="vilayaattu.html">விளையாட்டு</a></li>
+      <li><a href="education.html">கல்வி</a></li>
+      <li><a href="weather.html">வானிலை</a></li>
+    </ul>
+  </nav>
+
+  <!-- 20 SPORTS NEWS SLIDER -->
+
+  <div class="wrap">
+
+    <div class="heading">
+      இலங்கை விளையாட்டு செய்திகள்
+    </div>
+
+    <section class="hero" id="hero">
+
+      <div id="slides"></div>
+
+      <div class="counter" id="counter">01 / 20</div>
+
+      <div class="dots" id="dots"></div>
+
+      <div class="arrows">
+        <button id="prev" aria-label="Previous">←</button>
+        <button id="next" aria-label="Next">→</button>
+      </div>
+
+      <div class="progress" id="progress"></div>
+
+    </section>
+
+  </div>
+
+  <script>
+
+    /* SPORTS NEWS DATA */
+
+    const news = [
+
+      {
+        sport: "cricket",
+        title: "இலங்கை கிரிக்கெட் அணி அபார வெற்றி",
+        summary: "இறுதி ஓவர் வரை நீடித்த பரபரப்பான ஆட்டத்தில் இலங்கை அணி வெற்றியை தனதாக்கியது.",
+        date: "30 அக் 2026"
+      },
+
+      {
+        sport: "cricket",
+        title: "புதிய தலைவரின் கீழ் இலங்கை T20 அணி அறிவிப்பு",
+        summary: "வரவிருக்கும் தொடருக்கான 15 பேர் கொண்ட அணி இன்று அறிவிக்கப்பட்டது.",
+        date: "30 அக் 2026"
+      },
+
+      {
+        sport: "football",
+        title: "இலங்கை கால்பந்து அணி தகுதிச் சுற்றில் முன்னேற்றம்",
+        summary: "கடைசி நிமிட கோலால் இலங்கை அணி அடுத்த சுற்றுக்கு தகுதி பெற்றது.",
+        date: "30 அக் 2026"
+      },
+
+      {
+        sport: "athletics",
+        title: "தடகளப் போட்டியில் இலங்கை வீரருக்கு தங்கப் பதக்கம்",
+        summary: "தெற்காசிய தடகள போட்டியில் இலங்கை வீரர் புதிய சாதனை படைத்தார்.",
+        date: "29 அக் 2026"
+      },
+
+      {
+        sport: "volleyball",
+        title: "கரப்பந்தாட்டத்தில் வடக்கு அணி சாம்பியன்",
+        summary: "தேசிய கரப்பந்தாட்ட இறுதிப் போட்டியில் வடக்கு மாகாண அணி வெற்றி பெற்றது.",
+        date: "29 அக் 2026"
+      },
+
+      {
+        sport: "rugby",
+        title: "றக்பி: கண்டி அணி மீண்டும் முதலிடம்",
+        summary: "லீக் போட்டியில் கண்டி அணி தொடர்ச்சியாக மூன்றாவது வெற்றியை பதிவு செய்தது.",
+        date: "29 அக் 2026"
+      },
+
+      {
+        sport: "swimming",
+        title: "நீச்சல் போட்டியில் இளம் வீராங்கனை சாதனை",
+        summary: "தேசிய நீச்சல் போட்டியில் 17 வயது வீராங்கனை புதிய தேசிய சாதனை படைத்தார்.",
+        date: "29 அக் 2026"
+      },
+
+      {
+        sport: "badminton",
+        title: "பூப்பந்து தொடரில் இலங்கை இரட்டையர் அணி இறுதிக்கு",
+        summary: "அரை இறுதியில் வலுவான எதிரணியை வீழ்த்தி இறுதிப் போட்டிக்கு முன்னேறினர்.",
+        date: "28 அக் 2026"
+      },
+
+      {
+        sport: "cricket",
+        title: "இளையோர் கிரிக்கெட்: இலங்கை அணி இறுதிப் போட்டியில்",
+        summary: "19 வயதுக்குட்பட்டோர் உலகக் கிண்ண அரை இறுதியில் இலங்கை அணி வெற்றி.",
+        date: "28 அக் 2026"
+      },
+
+      {
+        sport: "tennis",
+        title: "டென்னிஸ்: இலங்கை வீரர் தரவரிசையில் முன்னேற்றம்",
+        summary: "சமீபத்திய வெற்றிகளால் தரவரிசையில் 40 இடங்கள் முன்னேறினார்.",
+        date: "28 அக் 2026"
+      },
+
+      {
+        sport: "boxing",
+        title: "குத்துச்சண்டையில் இலங்கை வீரருக்கு வெள்ளிப் பதக்கம்",
+        summary: "ஆசிய குத்துச்சண்டை போட்டியில் இலங்கைக்கு பதக்கம் கிடைத்தது.",
+        date: "28 அக் 2026"
+      },
+
+      {
+        sport: "stadium",
+        title: "கொழும்பில் புதிய விளையாட்டு அரங்கு திறப்பு",
+        summary: "நவீன வசதிகளுடன் கூடிய உள்ளக விளையாட்டு அரங்கம் திறந்து வைக்கப்பட்டது.",
+        date: "27 அக் 2026"
+      },
+
+      {
+        sport: "cricket",
+        title: "லங்கா பிரீமியர் லீக் அட்டவணை வெளியீடு",
+        summary: "அடுத்த மாதம் தொடங்கும் தொடரின் போட்டி அட்டவணை அறிவிக்கப்பட்டது.",
+        date: "27 அக் 2026"
+      },
+
+      {
+        sport: "running",
+        title: "மரதன் ஓட்டத்தில் ஆயிரக்கணக்கானோர் பங்கேற்பு",
+        summary: "காலி வீதியில் நடைபெற்ற மரதன் ஓட்டத்தில் பெருமளவு மக்கள் கலந்துகொண்டனர்.",
+        date: "27 அக் 2026"
+      },
+
+      {
+        sport: "chess",
+        title: "சதுரங்கத்தில் இலங்கை மாணவி சர்வதேச சாம்பியன்",
+        summary: "உலக பாடசாலை சதுரங்க போட்டியில் இலங்கை மாணவி முதலிடம் பெற்றார்.",
+        date: "27 அக் 2026"
+      },
+
+      {
+        sport: "netball",
+        title: "வலைப்பந்தாட்டம்: இலங்கை மகளிர் அணி வெற்றி",
+        summary: "ஆசிய கிண்ண போட்டியில் இலங்கை மகளிர் அணி தொடர்ச்சியான வெற்றியை பெற்றது.",
+        date: "26 அக் 2026"
+      },
+
+      {
+        sport: "cricket",
+        title: "பயிற்சிப் போட்டியில் இலங்கை வீரர்கள் அசத்தல்",
+        summary: "சதம் அடித்த இளம் வீரர் அணி தேர்வாளர்களின் கவனத்தை ஈர்த்தார்.",
+        date: "26 அக் 2026"
+      },
+
+      {
+        sport: "cycling",
+        title: "சைக்கிள் ஓட்டப் போட்டி: ஹம்பாந்தோட்டையில் ஆரம்பம்",
+        summary: "தேசிய அளவிலான சைக்கிள் ஓட்டப் போட்டி இன்று கோலாகலமாக தொடங்கியது.",
+        date: "26 அக் 2026"
+      },
+
+      {
+        sport: "tabletennis",
+        title: "மேசைப்பந்து: யாழ்ப்பாண வீரர் தேசிய சாம்பியன்",
+        summary: "இறுதிப் போட்டியில் அபாரமாக விளையாடி தேசிய பட்டத்தை வென்றார்.",
+        date: "26 அக் 2026"
+      },
+
+      {
+        sport: "cricket",
+        title: "இலங்கை மகளிர் கிரிக்கெட் அணிக்கு புதிய பயிற்சியாளர்",
+        summary: "மகளிர் அணியின் வளர்ச்சிக்காக அனுபவமிக்க பயிற்சியாளர் நியமிக்கப்பட்டார்.",
+        date: "25 அக் 2026"
+      }
+
+    ];
+
+
+    /* CREATE SLIDES */
+
+    const slidesContainer = document.getElementById("slides");
+    const dotsContainer = document.getElementById("dots");
+
+    news.forEach((item, index) => {
+
+      const number = index + 1;
+
+      const image = `images/sports/news${number}.jpg`;
+
+      const fallback =
+        `https://loremflickr.com/1200/800/${item.sport}?lock=${number}`;
+
+      const secondFallback =
+        `https://picsum.photos/seed/sport${number}/1200/800`;
+
+      const slide = document.createElement("article");
+
+      slide.className = "slide" + (index === 0 ? " active" : "");
+
+      slide.innerHTML = `
+
+        <div class="left">
+
+            <div class="blur"
+                style="background-image:url('${image}')">
+            </div>
+
+            <div class="txt">
+
+                <div class="tag">
+                    🏆 விளையாட்டு
+                </div>
+
+                <h2 class="title">
+                    ${item.title}
+                </h2>
+
+                <p class="summary">
+                    ${item.summary}
+                </p>
+
+                <div class="date">
+                    📅 ${item.date}
+                </div>
+
+                <a class="more"
+                   href="news.html?id=${number}">
+                    முழு செய்தியை படிக்க →
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="right">
+
+            <img
+                src="${image}"
+                alt="${item.title}"
+                onerror="
+                    if(!this.dataset.fallback){
+                        this.dataset.fallback='1';
+                        this.src='${fallback}';
+                    }
+                    else if(this.dataset.fallback==='1'){
+                        this.dataset.fallback='2';
+                        this.src='${secondFallback}';
+                    }
+                    else{
+                        this.onerror=null;
+                    }
+                "
+            >
+
+        </div>
+
+    `;
+
+      slidesContainer.appendChild(slide);
+
+
+      /* CREATE DOTS */
+
+      const dot = document.createElement("span");
+
+      dot.className = index === 0 ? "on" : "";
+
+      dot.dataset.i = index;
+
+      dotsContainer.appendChild(dot);
+
+    });
+
+
+    /* SLIDER FUNCTION */
+
+    (function () {
+
+      var INTERVAL = 2000;
+
+      var slides = document.querySelectorAll(".slide");
+
+      var dots = document.querySelectorAll("#dots span");
+
+      var counter = document.getElementById("counter");
+
+      var bar = document.getElementById("progress");
+
+      var total = slides.length;
+
+      var cur = 0;
+
+      var timer = null;
+
+
+      function pad(n) {
+        return n < 10 ? "0" + n : "" + n;
+      }
+
+
+      /* PROGRESS BAR */
+
+      function runBar() {
+
+        bar.style.transition = "none";
+
+        bar.style.width = "0";
+
+        void bar.offsetWidth;
+
+        bar.style.transition =
+          "width " + INTERVAL + "ms linear";
+
+        bar.style.width = "100%";
+
+      }
+
+
+      /* CHANGE SLIDE */
+
+      function show(i) {
+
+        slides[cur].classList.remove("active");
+
+        dots[cur].classList.remove("on");
+
+        cur = (i + total) % total;
+
+        slides[cur].classList.add("active");
+
+        dots[cur].classList.add("on");
+
+        counter.textContent =
+          pad(cur + 1) + " / " + pad(total);
+
+        runBar();
+
+      }
+
+
+      /* AUTO SLIDE */
+
+      function start() {
+
+        clearInterval(timer);
+
+        runBar();
+
+        timer = setInterval(function () {
+
+          show(cur + 1);
+
+        }, INTERVAL);
+
+      }
+
+
+      /* NEXT BUTTON */
+
+      document.getElementById("next").onclick = function () {
+
+        show(cur + 1);
+
+        start();
+
+      };
+
+
+      /* PREVIOUS BUTTON */
+
+      document.getElementById("prev").onclick = function () {
+
+        show(cur - 1);
+
+        start();
+
+      };
+
+
+      /* DOT CLICK */
+
+      dots.forEach(function (d) {
+
+        d.onclick = function () {
+
+          show(parseInt(d.dataset.i, 10));
+
+          start();
+
+        };
+
+      });
+
+
+      start();
+
+
+      /* MOBILE TOUCH SWIPE */
+
+      var hero = document.getElementById("hero");
+
+      var sx = 0;
+
+      var sy = 0;
+
+
+      hero.addEventListener("touchstart", function (e) {
+
+        sx = e.touches[0].clientX;
+
+        sy = e.touches[0].clientY;
+
+      }, {passive: true});
+
+
+      hero.addEventListener("touchend", function (e) {
+
+        var dx = e.changedTouches[0].clientX - sx;
+
+        var dy = e.changedTouches[0].clientY - sy;
+
+        if (
+          Math.abs(dx) > 50 &&
+          Math.abs(dx) > Math.abs(dy)
+        ) {
+
+          show(dx < 0 ? cur + 1 : cur - 1);
+
+          start();
+
+        }
+
+      }, {passive: true});
+
+
+    })();
+
+  </script>
+
+</body>
+
+</html>

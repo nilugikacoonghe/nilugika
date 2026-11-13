@@ -1,0 +1,2536 @@
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>கல்விச் செய்திகள் | NEWSWEB.LK</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700;800&family=Noto+Serif+Tamil:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            background: #0a2714;
+            color: #183b2a;
+            width: 100%;
+            min-width: 320px;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .topbar {
+            background: #103b29;
+            color: #fff;
+            padding: 10px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .topbar span {
+            color: #d6e7d9;
+        }
+
+        .header {
+            background: #fff;
+            padding: 22px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            border-bottom: 1px solid #e1e8df;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .logo-icon {
+            width: 53px;
+            height: 53px;
+            background: #174c34;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 25px;
+            border: 4px solid #dce9dc;
+        }
+
+        .logo h1 {
+            font-family: Georgia, serif;
+            font-size: 29px;
+            color: #17452e;
+            letter-spacing: 1px;
+        }
+
+        .logo p {
+            font-size: 11px;
+            color: #758679;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        .header-right {
+            text-align: right;
+            color: #607566;
+            font-size: 12px;
+        }
+
+        nav {
+            background: #17452e;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 16px 17px;
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #d8e8d8;
+            color: #17452e;
+        }
+
+        .breaking {
+            background: #e8efe5;
+            padding: 12px 7%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            overflow: hidden;
+            border-bottom: 1px solid #dce6d9;
+        }
+
+        .breaking strong {
+            background: #17452e;
+            color: #fff;
+            padding: 7px 13px;
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+        .breaking p {
+            font-size: 12px;
+            color: #315840;
+        }
+
+        .container {
+            width: 86%;
+            max-width: 1250px;
+            margin: 35px auto;
+        }
+
+        .page-heading {
+            border-left: 5px solid #1d633e;
+            padding-left: 17px;
+            margin-bottom: 25px;
+        }
+
+        .page-heading h2 {
+            font-family: 'Noto Serif Tamil', serif;
+            font-size: 27px;
+            color: #17452e;
+        }
+
+        .page-heading p {
+            color: #758477;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            background: #fff;
+            border: 1px solid #e1e9df;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(25, 65, 40, .06);
+        }
+
+        .hero-image {
+            height: 360px;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .category {
+            display: inline-block;
+            background: #e3eee3;
+            color: #245d3b;
+            padding: 7px 12px;
+            font-size: 11px;
+            width: max-content;
+            max-width: 100%;
+            margin-bottom: 16px;
+        }
+
+        .hero-content h2 {
+            font-family: 'Noto Serif Tamil', serif;
+            font-size: 23px;
+            line-height: 1.8;
+            color: #17452e;
+            margin-bottom: 13px;
+        }
+
+        .hero-content p {
+            color: #68786b;
+            font-size: 13px;
+            line-height: 2;
+        }
+
+        .read-btn {
+            display: inline-block;
+            background: #17452e;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 12px;
+            margin-top: 20px;
+            width: max-content;
+            transition: .3s;
+        }
+
+        .read-btn:hover {
+            background: #b18a4a;
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #dce7db;
+            margin-bottom: 23px;
+            padding-bottom: 13px;
+        }
+
+        .section-title h2 {
+            font-family: 'Noto Serif Tamil', serif;
+            font-size: 21px;
+            color: #17452e;
+        }
+
+        .section-title span {
+            font-size: 12px;
+            color: #829083;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 23px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #e0e8de;
+            box-shadow: 0 5px 18px rgba(30, 65, 40, .045);
+            transition: .3s;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(30, 65, 40, .12);
+        }
+
+        .card-image {
+            height: 205px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.06);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content .category {
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: #17452e;
+            font-family: 'Noto Serif Tamil', serif;
+            font-size: 16px;
+            line-height: 1.8;
+            min-height: 58px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #6d796e;
+            font-size: 12px;
+            line-height: 2;
+            min-height: 70px;
+        }
+
+        .meta {
+            border-top: 1px solid #edf0eb;
+            margin-top: 15px;
+            padding-top: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10px;
+            color: #899489;
+        }
+
+        .more {
+            color: #1e603b;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .pagination-info {
+            text-align: center;
+            padding: 30px 0;
+            color: #758477;
+            font-size: 12px;
+        }
+
+        .footer {
+            background: #103b29;
+            color: #fff;
+            padding: 40px 7% 20px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 30px;
+        }
+
+        .footer h2 {
+            font-family: Georgia, serif;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .footer h3 {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .footer p,
+        .footer a {
+            font-size: 12px;
+            color: #d1dfd3;
+            line-height: 2.2;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, .15);
+            padding-top: 18px;
+            text-align: center;
+            color: #c6d6c9;
+            font-size: 11px;
+        }
+
+        .topbar,
+        .header,
+        nav,
+        .breaking,
+        .container,
+        .footer,
+        .hero,
+        .hero-content,
+        .card,
+        .card-content,
+        .footer-content {
+            min-width: 0;
+        }
+
+        .card h3,
+        .card p,
+        .hero-content h2,
+        .hero-content p,
+        .page-heading h2,
+        .page-heading p {
+            overflow-wrap: anywhere;
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            .topbar {
+                padding: 10px 4%;
+                flex-wrap: wrap;
+                gap: 5px 15px;
+            }
+
+            .header {
+                padding: 19px 4%;
+            }
+
+            nav {
+                padding: 0 3%;
+                justify-content: center;
+            }
+
+            nav a {
+                padding: 13px 12px;
+            }
+
+            .container {
+                width: 92%;
+                margin: 28px auto;
+            }
+
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .hero-image {
+                height: clamp(230px, 42vw, 340px);
+            }
+
+            .hero-content {
+                padding: 28px;
+            }
+
+            .news-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 18px;
+            }
+
+            .card-image {
+                height: clamp(155px, 24vw, 210px);
+            }
+
+            .card-content {
+                padding: 17px;
+            }
+
+            .card h3,
+            .card p {
+                min-height: 0;
+            }
+
+            .footer-content {
+                grid-template-columns: 1.5fr 1fr;
+                gap: 28px;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .topbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+                padding: 9px 15px;
+                font-size: 10px;
+                line-height: 1.7;
+            }
+
+            .header {
+                justify-content: flex-start;
+                padding: 15px;
+            }
+
+            .logo {
+                gap: 10px;
+            }
+
+            .logo-icon {
+                width: 44px;
+                height: 44px;
+                flex: 0 0 44px;
+                font-size: 21px;
+            }
+
+            .logo h1 {
+                font-size: 22px;
+                line-height: 1.2;
+            }
+
+            .logo p {
+                font-size: 9px;
+                letter-spacing: 1px;
+                line-height: 1.6;
+            }
+
+            .header-right {
+                display: none;
+            }
+
+            nav {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1px;
+                padding: 7px 10px;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px 6px;
+                text-align: center;
+                font-size: 11px;
+                line-height: 1.5;
+                overflow-wrap: anywhere;
+                border: 1px solid rgba(255, 255, 255, .08);
+            }
+
+            .breaking {
+                align-items: flex-start;
+                gap: 9px;
+                padding: 10px 13px;
+            }
+
+            .breaking strong {
+                padding: 6px 9px;
+                font-size: 10px;
+            }
+
+            .breaking p {
+                font-size: 10px;
+                line-height: 1.8;
+            }
+
+            .container {
+                width: calc(100% - 26px);
+                margin: 22px auto;
+            }
+
+            .page-heading {
+                padding-left: 12px;
+                margin-bottom: 18px;
+            }
+
+            .page-heading h2 {
+                font-size: 20px;
+                line-height: 1.6;
+            }
+
+            .page-heading p {
+                font-size: 10px;
+                line-height: 1.8;
+            }
+
+            .hero {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 26px;
+            }
+
+            .hero-image {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 16 / 9;
+            }
+
+            .hero-content {
+                padding: 19px 16px 21px;
+            }
+
+            .category {
+                padding: 6px 10px;
+                font-size: 10px;
+                margin-bottom: 11px;
+            }
+
+            .hero-content h2 {
+                font-size: 18px;
+                margin-bottom: 9px;
+            }
+
+            .hero-content p {
+                font-size: 11px;
+                line-height: 1.9;
+            }
+
+            .read-btn {
+                padding: 10px 15px;
+                font-size: 11px;
+                margin-top: 15px;
+            }
+
+            .section-title {
+                align-items: flex-end;
+                gap: 8px;
+                margin-bottom: 15px;
+                padding-bottom: 10px;
+            }
+
+            .section-title h2 {
+                font-size: 17px;
+                line-height: 1.6;
+            }
+
+            .section-title span {
+                font-size: 10px;
+                white-space: nowrap;
+            }
+
+            .news-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 15px;
+            }
+
+            .card-image {
+                height: auto;
+                aspect-ratio: 16 / 9;
+            }
+
+            .card-content {
+                padding: 15px;
+            }
+
+            .card-content .category {
+                margin-bottom: 8px;
+            }
+
+            .card h3 {
+                font-size: 14px;
+                margin-bottom: 7px;
+            }
+
+            .card p {
+                font-size: 11px;
+                line-height: 1.9;
+            }
+
+            .meta {
+                margin-top: 11px;
+                padding-top: 10px;
+                gap: 8px;
+                flex-wrap: wrap;
+                font-size: 9px;
+            }
+
+            .more {
+                font-size: 10px;
+                white-space: nowrap;
+            }
+
+            .pagination-info {
+                padding: 22px 5px;
+                font-size: 10px;
+            }
+
+            .footer {
+                margin-top: 30px;
+                padding: 28px 17px 17px;
+            }
+
+            .footer-content {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 21px;
+                padding-bottom: 22px;
+            }
+
+            .footer h2 {
+                font-size: 21px;
+            }
+
+            .footer h3 {
+                font-size: 13px;
+                margin-bottom: 8px;
+            }
+
+            .footer p,
+            .footer a {
+                font-size: 11px;
+                line-height: 2;
+            }
+
+            .copyright {
+                padding-top: 13px;
+                font-size: 9px;
+                line-height: 1.7;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .logo h1 {
+                font-size: 20px;
+            }
+
+            nav {
+                padding-left: 7px;
+                padding-right: 7px;
+            }
+
+            nav a {
+                font-size: 10px;
+                padding: 9px 4px;
+            }
+
+            .section-title h2 {
+                font-size: 15px;
+            }
+
+            .card-content {
+                padding: 13px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topbar">
+        <span>இலங்கை செய்திகள் | கல்வி | அறிவு | முன்னேற்றம்</span>
+        <span>NEWSWEB.LK - உண்மை • நம்பிக்கை • முன்னேற்றம்</span>
+    </div>
+
+    <header class="header">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🌍</div>
+            <div>
+                <h1>NEWSWEB.LK</h1>
+                <p>உண்மை • நம்பிக்கை • முன்னேற்றம்</p>
+            </div>
+        </a>
+
+        <div class="header-right">
+            இலங்கையின் நம்பகமான செய்தித் தளம்<br>
+            கல்விச் செய்திகள் சிறப்புப் பகுதி
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">முகப்பு</a>
+        <a href="political.html">அரசியல்</a>
+        <a href="srilanka.html">இலங்கை</a>
+        <a href="economics.html">பொருளாதாரம்</a>
+        <a href="society.html">சமூகம்</a>
+        <a href="india.html">இந்தியா</a>
+        <a href="world.html">உலகம்</a>
+        <a href="sports.html">விளையாட்டு</a>
+        <a href="sports.html">வானிலை</a>
+        <a href="education.html" class="active">கல்வி</a>
+    </nav>
+
+    <div class="breaking">
+        <strong>கல்வி செய்திகள்</strong>
+        <p>இலங்கையின் பாடசாலைகள், பல்கலைக்கழகங்கள், பரீட்சைகள் மற்றும் கல்வி மறுசீரமைப்புத் தொடர்பான செய்திகள்</p>
+    </div>
+
+    <main class="container">
+
+        <div class="page-heading">
+            <h2>இலங்கை கல்விச் செய்திகள்</h2>
+            <p>கல்வி • பாடசாலைகள் • பல்கலைக்கழகங்கள் • பரீட்சைகள் • புலமைப்பரிசில்கள்</p>
+        </div>
+
+        <section class="hero">
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+                    alt="Sri Lankan education and classroom">
+            </div>
+
+            <div class="hero-content">
+                <span class="category">முக்கிய கல்விச் செய்தி</span>
+                <h2>இலங்கையின் கல்வித்துறையில் புதிய மாற்றங்கள்</h2>
+                <p>
+                    புதிய பாடத்திட்டம், டிஜிட்டல் கல்வி, ஆசிரியர் நியமனங்கள்
+                    மற்றும் மாணவர்களுக்கான புதிய கல்வி வாய்ப்புகள் பற்றிய
+                    முக்கிய தகவல்களை இங்கே அறிந்துகொள்ளுங்கள்.
+                </p>
+                <a href="https://www.govinfo.lk/2026/10/School-Timetables-for-Grades-1-to-13-From-2027.html"
+                    target="_blank" class="read-btn">முழுச் செய்தியை வாசிக்க</a>
+            </div>
+        </section>
+
+        <div class="section-title">
+            <h2>அனைத்துக் கல்விச் செய்திகள்</h2>
+            <span>19 செய்திகள்</span>
+        </div>
+
+        <section class="news-grid">
+
+            <!-- 1 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+                        alt="2027 முதல் புதிய கல்வி பாடத்திட்டம் அறிமுகம்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">கல்வி மறுசீரமைப்பு</span>
+                    <h3>2027 முதல் புதிய கல்வி பாடத்திட்டம் அறிமுகம்</h3>
+                    <p>இலங்கையின் புதிய கல்வி மறுசீரமைப்பு திட்டம் படிப்படியாக 2027 முதல் விரிவுபடுத்தப்படவுள்ளது.</p>
+                    <div class="meta">
+                        <span>28 October 2026</span>
+                        <a href="https://www.govinfo.lk/2026/10/School-Timetables-for-Grades-1-to-13-From-2027.html"
+                            target="_blank" rel="noopener noreferrer" class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+                        alt="2027 ஆம் ஆண்டுக்கான தரம் 1 வகுப்புகள் ஜனவரி 20 ஆரம்பம்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">பாடசாலைக் கல்வி</span>
+                    <h3>2027 ஆம் ஆண்டுக்கான தரம் 1 வகுப்புகள் ஜனவரி 20 ஆரம்பம்</h3>
+                    <p>2027 கல்வியாண்டில் தரம் 1 இற்கு சேர்க்கப்படும் மாணவர்களுக்கான வகுப்புகள் ஜனவரி 20
+                        ஆரம்பிக்கப்படவுள்ளதாக அறிவிக்கப்பட்டுள்ளது.</p>
+                    <div class="meta">
+                        <span>25 October 2026</span>
+                        <a href="https://www.sundaytimes.lk/261025/education/" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136"
+                        alt="23,000 ஆசிரியர் நியமனங்கள் டிசம்பரில்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">ஆசிரியர் நியமனம்</span>
+                    <h3>23,000 ஆசிரியர் நியமனங்கள் டிசம்பரில்</h3>
+                    <p>அரச பாடசாலைகளில் நிலவும் ஆசிரியர் வெற்றிடங்களை நிரப்புவதற்கான நியமன நடவடிக்கைகள்
+                        முன்னெடுக்கப்பட்டு வருகின்றன.</p>
+                    <div class="meta">
+                        <span>25 October 2026</span>
+                        <a href="https://www.sundaytimes.lk/261025/education/" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 4 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350"
+                        alt="பாடசாலைகளுக்கு Smart Classroom வசதிகள்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">தொழில்நுட்பக் கல்வி</span>
+                    <h3>பாடசாலைகளுக்கு Smart Classroom வசதிகள்</h3>
+                    <p>பாடசாலைகளில் Smart Classroom, இணைய வசதிகள் மற்றும் டிஜிட்டல் உபகரணங்களை வழங்கும் திட்டம்
+                        தொடர்பில் முன்னேற்றம் ஆராயப்பட்டுள்ளது.</p>
+                    <div class="meta">
+                        <span>23 October 2026</span>
+                        <a href="https://www.dailymirror.lk/news/article/1-353252" target="_blank"
+                            rel="noopener noreferrer" class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 5 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+                        alt="புதிய கல்வி மறுசீரமைப்புக்கான பள்ளி நேர அட்டவணை" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">பாடசாலை அறிவிப்பு</span>
+                    <h3>புதிய கல்வி மறுசீரமைப்புக்கான பள்ளி நேர அட்டவணை</h3>
+                    <p>தரம் 1 முதல் 13 வரையிலான மாணவர்களுக்கான புதிய பாடசாலை நேர அட்டவணை தொடர்பான சுற்றறிக்கை
+                        வெளியிடப்பட்டுள்ளது.</p>
+                    <div class="meta">
+                        <span>28 October 2026</span>
+                        <a href="https://www.govinfo.lk/2026/10/School-Timetables-for-Grades-1-to-13-From-2027.html"
+                            target="_blank" rel="noopener noreferrer" class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 6 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1427504494785-3f1f5f6f8f8f"
+                        alt="2026 கல்வி மறுசீரமைப்புத் திட்டம்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">கல்விக் கொள்கை</span>
+                    <h3>2026 கல்வி மறுசீரமைப்புத் திட்டம்</h3>
+                    <p>புதிய பாடத்திட்டம் மற்றும் மாணவர் மதிப்பீட்டு முறைகள் தொடர்பான கல்வி மறுசீரமைப்புத் திட்டம்
+                        முன்னெடுக்கப்பட்டுள்ளது.</p>
+                    <div class="meta">
+                        <span>October 2026</span>
+                        <a href="https://edureformfact.moe.gov.lk/faq/category/education-reforms-2026" target="_blank"
+                            rel="noopener noreferrer" class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 7 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173"
+                        alt="2026 க.பொ.த உயர்தரப் பரீட்சை" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">பரீட்சை</span>
+                    <h3>2026 க.பொ.த உயர்தரப் பரீட்சை</h3>
+                    <p>2026 ஆம் ஆண்டுக்கான உயர்தரப் பரீட்சை தொடர்பான தகவல்கள் பரீட்சைகள் திணைக்களத்தினால்
+                        வெளியிடப்பட்டுள்ளன.</p>
+                    <div class="meta">
+                        <span>August 2026</span>
+                        <a href="https://www.exams.gov.lk/examcalendar" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 8 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                        alt="2026 பொதுத் தகவல் தொழில்நுட்பப் பரீட்சை" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">GIT பரீட்சை</span>
+                    <h3>2026 பொதுத் தகவல் தொழில்நுட்பப் பரீட்சை</h3>
+                    <p>General Information Technology பரீட்சை தொடர்பான அறிவித்தல்கள் மற்றும் தகவல்களை பரீட்சைகள்
+                        திணைக்களத்தின் இணையத்தளத்தில் அறிந்துகொள்ளலாம்.</p>
+                    <div class="meta">
+                        <span>October 2026</span>
+                        <a href="https://doenets.lk/news" target="_blank" rel="noopener noreferrer" class="more">வாசிக்க
+                            →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 9 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8"
+                        alt="2026 க.பொ.த சாதாரண தரப் பரீட்சை அட்டவணை" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">O/L பரீட்சை</span>
+                    <h3>2026 க.பொ.த சாதாரண தரப் பரீட்சை அட்டவணை</h3>
+                    <p>2026 சாதாரண தரப் பரீட்சைக்கான கால அட்டவணை மற்றும் பரீட்சை அறிவித்தல்களை அதிகாரப்பூர்வ
+                        இணையத்தளத்தில் பார்வையிடலாம்.</p>
+                    <div class="meta">
+                        <span>2026</span>
+                        <a href="https://www.doenets.lk/examcalendar/" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 10 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+                        alt="புதிய பாடத்திட்டத்தில் தரம் 6 கல்வி" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">புதிய பாடத்திட்டம்</span>
+                    <h3>புதிய பாடத்திட்டத்தில் தரம் 6 கல்வி</h3>
+                    <p>2027 முதல் தரம் 6 மாணவர்களுக்கான புதிய பாடத்திட்டம் அறிமுகப்படுத்தப்படவுள்ளது.</p>
+                    <div class="meta">
+                        <span>2027 திட்டம்</span>
+                        <a href="https://www.govinfo.lk/2026/10/School-Timetables-for-Grades-1-to-13-From-2027.html"
+                            target="_blank" rel="noopener noreferrer" class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 11 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585"
+                        alt="பல்கலைக்கழக அனுமதி முறையில் புதிய திட்டம்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">உயர்கல்வி</span>
+                    <h3>பல்கலைக்கழக அனுமதி முறையில் புதிய திட்டம்</h3>
+                    <p>2028 முதல் ஒருங்கிணைந்த உயர்கல்வி அனுமதி முறை ஒன்றை அறிமுகப்படுத்துவது தொடர்பான திட்டம்
+                        முன்வைக்கப்பட்டுள்ளது.</p>
+                    <div class="meta">
+                        <span>October 2026</span>
+                        <a href="https://pulseline.lk/news-feature/sri-lanka-approves-new-curriculum-framework-rs-96-billion-school-digitalisation-plan/"
+                            target="_blank" rel="noopener noreferrer" class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 12 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1584697964358-3e14ca57658b"
+                        alt="பாடசாலை டிஜிட்டல் மயமாக்கல் திட்டம்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">டிஜிட்டல் கல்வி</span>
+                    <h3>பாடசாலை டிஜிட்டல் மயமாக்கல் திட்டம்</h3>
+                    <p>இலங்கையின் பாடசாலைகளுக்கு டிஜிட்டல் வசதிகளை மேம்படுத்தும் திட்டம் தொடர்பான தகவல்கள்
+                        வெளியிடப்பட்டுள்ளன.</p>
+                    <div class="meta">
+                        <span>October 2026</span>
+                        <a href="https://pulseline.lk/news-feature/sri-lanka-approves-new-curriculum-framework-rs-96-billion-school-digitalisation-plan/"
+                            target="_blank" rel="noopener noreferrer" class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 13 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173"
+                        alt="மாணவர்களுக்கான புதிய மதிப்பீட்டு முறை" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">மாணவர் மதிப்பீடு</span>
+                    <h3>மாணவர்களுக்கான புதிய மதிப்பீட்டு முறை</h3>
+                    <p>தரம் 1 முதல் 11 வரையிலான மாணவர்களின் கற்றல் திறன்களை மதிப்பிடுவதற்கான புதிய மதிப்பீட்டு
+                        கட்டமைப்பு அங்கீகரிக்கப்பட்டுள்ளது.</p>
+                    <div class="meta">
+                        <span>October 2026</span>
+                        <a href="https://pulseline.lk/news-feature/sri-lanka-approves-new-curriculum-framework-rs-96-billion-school-digitalisation-plan/"
+                            target="_blank" rel="noopener noreferrer" class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 14 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
+                        alt="இலங்கை Skills Expo 2026" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">தொழிற்கல்வி</span>
+                    <h3>இலங்கை Skills Expo 2026</h3>
+                    <p>தொழிற்கல்வி, வேலைவாய்ப்பு மற்றும் தொழில் வழிகாட்டல் தொடர்பான Skills Expo நிகழ்வு கொழும்பில்
+                        நடத்தப்பட்டது.</p>
+                    <div class="meta">
+                        <span>25 October 2026</span>
+                        <a href="https://www.sundaytimes.lk/261025/education/" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 15 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1"
+                        alt="பல்கலைக்கழகங்களில் மாணவர் பாதுகாப்பு விழிப்புணர்வு" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">பல்கலைக்கழகம்</span>
+                    <h3>பல்கலைக்கழகங்களில் மாணவர் பாதுகாப்பு விழிப்புணர்வு</h3>
+                    <p>களனி பல்கலைக்கழகத்தில் கற்றல் சூழலில் பாதுகாப்பு மற்றும் துன்புறுத்தல் தடுப்பு தொடர்பான
+                        விழிப்புணர்வு நிகழ்வு முன்னெடுக்கப்பட்டது.</p>
+                    <div class="meta">
+                        <span>25 October 2026</span>
+                        <a href="https://www.sundaytimes.lk/261025/education/" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 16 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a"
+                        alt="மாணவர் காப்புறுதித் திட்டத்தில் புதிய நன்மைகள்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">மாணவர் நலன்</span>
+                    <h3>மாணவர் காப்புறுதித் திட்டத்தில் புதிய நன்மைகள்</h3>
+                    <p>Suraksha மாணவர் காப்புறுதித் திட்டத்தில் புதிய நன்மைகளை உள்ளடக்கும் வகையில் திருத்தம் செய்ய
+                        அமைச்சரவை தீர்மானித்துள்ளது.</p>
+                    <div class="meta">
+                        <span>25 October 2026</span>
+                        <a href="https://www.sundaytimes.lk/261025/education/" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 17 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b"
+                        alt="இலங்கை மாணவர்களுக்கு வெளிநாட்டு புலமைப்பரிசில்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">புலமைப்பரிசில்</span>
+                    <h3>இலங்கை மாணவர்களுக்கு வெளிநாட்டு புலமைப்பரிசில்</h3>
+                    <p>கண்டானந்தா கல்லூரியைச் சேர்ந்த ஆறு மாணவர்களுக்கு சீனாவின் யுன்னான் பல்கலைக்கழகம் முழுமையான
+                        புலமைப்பரிசில்களை வழங்கவுள்ளது.</p>
+                    <div class="meta">
+                        <span>25 October 2026</span>
+                        <a href="https://www.sundaytimes.lk/261025/education/" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 18 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                        alt="தொழிற்கல்வி மற்றும் NVQ வாய்ப்புகள்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">NVQ கல்வி</span>
+                    <h3>தொழிற்கல்வி மற்றும் NVQ வாய்ப்புகள்</h3>
+                    <p>தொழிற்கல்வி தகுதிகள் மூலம் உயர்கல்வி வாய்ப்புகளை விரிவுபடுத்துவது தொடர்பான முன்மொழிவுகள்
+                        ஆராயப்பட்டுள்ளன.</p>
+                    <div class="meta">
+                        <span>August 2026</span>
+                        <a href="https://www.sundaytimes.lk/260816/education/" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 19 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+                        alt="பாடசாலை மாணவர்களுக்கான ஆங்கிலக் கல்வி" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">மொழிக் கல்வி</span>
+                    <h3>பாடசாலை மாணவர்களுக்கான ஆங்கிலக் கல்வி</h3>
+                    <p>மாணவர்களின் மொழித் திறன்களை மேம்படுத்தும் வகையில் ஆங்கிலக் கல்வி மற்றும் தொடர்பாடல் திறன்களுக்கு
+                        முக்கியத்துவம் வழங்கப்படுகிறது.</p>
+                    <div class="meta">
+                        <span>கல்விச் சிறப்புக் கட்டுரை</span>
+                        <a href="https://moe.gov.lk/" target="_blank" rel="noopener noreferrer" class="more">வாசிக்க
+                            →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 20 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585"
+                        alt="இலங்கையில் உயர்கல்வி மற்றும் தொழில்நுட்பக் கல்வி" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">உயர்கல்வி</span>
+                    <h3>இலங்கையில் உயர்கல்வி மற்றும் தொழில்நுட்பக் கல்வி</h3>
+                    <p>தொழில்நுட்ப அறிவு மற்றும் தொழில்முறை திறன்களை வளர்ப்பதற்கான உயர்கல்வி வாய்ப்புகள் பற்றிய
+                        தகவல்கள்.</p>
+                    <div class="meta">
+                        <span>கல்விச் சிறப்புக் கட்டுரை</span>
+                        <a href="https://moe.gov.lk/" target="_blank" rel="noopener noreferrer" class="more">வாசிக்க
+                            →</a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <div class="pagination-info">
+            NEWSWEB.LK | இலங்கை கல்விச் செய்திகள்
+        </div>
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+                <h2>NEWSWEB.LK</h2>
+                <p>
+                    உண்மை • நம்பிக்கை • முன்னேற்றம்
+                    <br>
+                    இலங்கையின் கல்வி, சமூகம் மற்றும்
+                    நாட்டின் முன்னேற்றம் தொடர்பான செய்திகளை
+                    வழங்கும் செய்தித் தளம்.
+                </p>
+            </div>
+
+            <div>
+                <h3>முக்கிய பக்கங்கள்</h3>
+                <div class="footer-links">
+                    <a href="index.html">முகப்பு</a>
+                    <a href="srilanka.html">இலங்கை</a>
+                    <a href="education.html">கல்வி</a>
+                    <a href="world.html">உலகம்</a>
+                </div>
+            </div>
+
+            <div>
+                <h3>கல்வி தகவல்கள்</h3>
+                <div class="footer-links">
+                    <a href="https://moe.gov.lk/" target="_blank">கல்வி அமைச்சு</a>
+                    <a href="https://doenets.lk/" target="_blank">பரீட்சைகள் திணைக்களம்</a>
+                    <a href="https://www.exams.gov.lk/examcalendar" target="_blank">பரீட்சை அட்டவணை</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 NEWSWEB.LK. All Rights Reserved.
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>கல்விச் செய்திகள் | NEWSWEB.LK</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700;800&family=Noto+Serif+Tamil:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            background: #0a2714;
+            color: #183b2a;
+            width: 100%;
+            min-width: 320px;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .topbar {
+            background: #103b29;
+            color: #fff;
+            padding: 10px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .topbar span {
+            color: #d6e7d9;
+        }
+
+        .header {
+            background: #fff;
+            padding: 22px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            border-bottom: 1px solid #e1e8df;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .logo-icon {
+            width: 53px;
+            height: 53px;
+            background: #174c34;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 25px;
+            border: 4px solid #dce9dc;
+        }
+
+        .logo h1 {
+            font-family: Georgia, serif;
+            font-size: 29px;
+            color: #17452e;
+            letter-spacing: 1px;
+        }
+
+        .logo p {
+            font-size: 11px;
+            color: #758679;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        .header-right {
+            text-align: right;
+            color: #607566;
+            font-size: 12px;
+        }
+
+        nav {
+            background: #17452e;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 16px 17px;
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #d8e8d8;
+            color: #17452e;
+        }
+
+        .breaking {
+            background: #e8efe5;
+            padding: 12px 7%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            overflow: hidden;
+            border-bottom: 1px solid #dce6d9;
+        }
+
+        .breaking strong {
+            background: #17452e;
+            color: #fff;
+            padding: 7px 13px;
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+        .breaking p {
+            font-size: 12px;
+            color: #315840;
+        }
+
+        .container {
+            width: 86%;
+            max-width: 1250px;
+            margin: 35px auto;
+        }
+
+        .page-heading {
+            border-left: 5px solid #1d633e;
+            padding-left: 17px;
+            margin-bottom: 25px;
+        }
+
+        .page-heading h2 {
+            font-family: 'Noto Serif Tamil', serif;
+            font-size: 27px;
+            color: #17452e;
+        }
+
+        .page-heading p {
+            color: #758477;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            background: #fff;
+            border: 1px solid #e1e9df;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(25, 65, 40, .06);
+        }
+
+        .hero-image {
+            height: 360px;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .category {
+            display: inline-block;
+            background: #e3eee3;
+            color: #245d3b;
+            padding: 7px 12px;
+            font-size: 11px;
+            width: max-content;
+            max-width: 100%;
+            margin-bottom: 16px;
+        }
+
+        .hero-content h2 {
+            font-family: 'Noto Serif Tamil', serif;
+            font-size: 23px;
+            line-height: 1.8;
+            color: #17452e;
+            margin-bottom: 13px;
+        }
+
+        .hero-content p {
+            color: #68786b;
+            font-size: 13px;
+            line-height: 2;
+        }
+
+        .read-btn {
+            display: inline-block;
+            background: #17452e;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 12px;
+            margin-top: 20px;
+            width: max-content;
+            transition: .3s;
+        }
+
+        .read-btn:hover {
+            background: #b18a4a;
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #dce7db;
+            margin-bottom: 23px;
+            padding-bottom: 13px;
+        }
+
+        .section-title h2 {
+            font-family: 'Noto Serif Tamil', serif;
+            font-size: 21px;
+            color: #17452e;
+        }
+
+        .section-title span {
+            font-size: 12px;
+            color: #829083;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 23px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #e0e8de;
+            box-shadow: 0 5px 18px rgba(30, 65, 40, .045);
+            transition: .3s;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(30, 65, 40, .12);
+        }
+
+        .card-image {
+            height: 205px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.06);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content .category {
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: #17452e;
+            font-family: 'Noto Serif Tamil', serif;
+            font-size: 16px;
+            line-height: 1.8;
+            min-height: 58px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #6d796e;
+            font-size: 12px;
+            line-height: 2;
+            min-height: 70px;
+        }
+
+        .meta {
+            border-top: 1px solid #edf0eb;
+            margin-top: 15px;
+            padding-top: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10px;
+            color: #899489;
+        }
+
+        .more {
+            color: #1e603b;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .pagination-info {
+            text-align: center;
+            padding: 30px 0;
+            color: #758477;
+            font-size: 12px;
+        }
+
+        .footer {
+            background: #103b29;
+            color: #fff;
+            padding: 40px 7% 20px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 30px;
+        }
+
+        .footer h2 {
+            font-family: Georgia, serif;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .footer h3 {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .footer p,
+        .footer a {
+            font-size: 12px;
+            color: #d1dfd3;
+            line-height: 2.2;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, .15);
+            padding-top: 18px;
+            text-align: center;
+            color: #c6d6c9;
+            font-size: 11px;
+        }
+
+        .topbar,
+        .header,
+        nav,
+        .breaking,
+        .container,
+        .footer,
+        .hero,
+        .hero-content,
+        .card,
+        .card-content,
+        .footer-content {
+            min-width: 0;
+        }
+
+        .card h3,
+        .card p,
+        .hero-content h2,
+        .hero-content p,
+        .page-heading h2,
+        .page-heading p {
+            overflow-wrap: anywhere;
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            .topbar {
+                padding: 10px 4%;
+                flex-wrap: wrap;
+                gap: 5px 15px;
+            }
+
+            .header {
+                padding: 19px 4%;
+            }
+
+            nav {
+                padding: 0 3%;
+                justify-content: center;
+            }
+
+            nav a {
+                padding: 13px 12px;
+            }
+
+            .container {
+                width: 92%;
+                margin: 28px auto;
+            }
+
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .hero-image {
+                height: clamp(230px, 42vw, 340px);
+            }
+
+            .hero-content {
+                padding: 28px;
+            }
+
+            .news-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 18px;
+            }
+
+            .card-image {
+                height: clamp(155px, 24vw, 210px);
+            }
+
+            .card-content {
+                padding: 17px;
+            }
+
+            .card h3,
+            .card p {
+                min-height: 0;
+            }
+
+            .footer-content {
+                grid-template-columns: 1.5fr 1fr;
+                gap: 28px;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .topbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+                padding: 9px 15px;
+                font-size: 10px;
+                line-height: 1.7;
+            }
+
+            .header {
+                justify-content: flex-start;
+                padding: 15px;
+            }
+
+            .logo {
+                gap: 10px;
+            }
+
+            .logo-icon {
+                width: 44px;
+                height: 44px;
+                flex: 0 0 44px;
+                font-size: 21px;
+            }
+
+            .logo h1 {
+                font-size: 22px;
+                line-height: 1.2;
+            }
+
+            .logo p {
+                font-size: 9px;
+                letter-spacing: 1px;
+                line-height: 1.6;
+            }
+
+            .header-right {
+                display: none;
+            }
+
+            nav {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1px;
+                padding: 7px 10px;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px 6px;
+                text-align: center;
+                font-size: 11px;
+                line-height: 1.5;
+                overflow-wrap: anywhere;
+                border: 1px solid rgba(255, 255, 255, .08);
+            }
+
+            .breaking {
+                align-items: flex-start;
+                gap: 9px;
+                padding: 10px 13px;
+            }
+
+            .breaking strong {
+                padding: 6px 9px;
+                font-size: 10px;
+            }
+
+            .breaking p {
+                font-size: 10px;
+                line-height: 1.8;
+            }
+
+            .container {
+                width: calc(100% - 26px);
+                margin: 22px auto;
+            }
+
+            .page-heading {
+                padding-left: 12px;
+                margin-bottom: 18px;
+            }
+
+            .page-heading h2 {
+                font-size: 20px;
+                line-height: 1.6;
+            }
+
+            .page-heading p {
+                font-size: 10px;
+                line-height: 1.8;
+            }
+
+            .hero {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 26px;
+            }
+
+            .hero-image {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 16 / 9;
+            }
+
+            .hero-content {
+                padding: 19px 16px 21px;
+            }
+
+            .category {
+                padding: 6px 10px;
+                font-size: 10px;
+                margin-bottom: 11px;
+            }
+
+            .hero-content h2 {
+                font-size: 18px;
+                margin-bottom: 9px;
+            }
+
+            .hero-content p {
+                font-size: 11px;
+                line-height: 1.9;
+            }
+
+            .read-btn {
+                padding: 10px 15px;
+                font-size: 11px;
+                margin-top: 15px;
+            }
+
+            .section-title {
+                align-items: flex-end;
+                gap: 8px;
+                margin-bottom: 15px;
+                padding-bottom: 10px;
+            }
+
+            .section-title h2 {
+                font-size: 17px;
+                line-height: 1.6;
+            }
+
+            .section-title span {
+                font-size: 10px;
+                white-space: nowrap;
+            }
+
+            .news-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 15px;
+            }
+
+            .card-image {
+                height: auto;
+                aspect-ratio: 16 / 9;
+            }
+
+            .card-content {
+                padding: 15px;
+            }
+
+            .card-content .category {
+                margin-bottom: 8px;
+            }
+
+            .card h3 {
+                font-size: 14px;
+                margin-bottom: 7px;
+            }
+
+            .card p {
+                font-size: 11px;
+                line-height: 1.9;
+            }
+
+            .meta {
+                margin-top: 11px;
+                padding-top: 10px;
+                gap: 8px;
+                flex-wrap: wrap;
+                font-size: 9px;
+            }
+
+            .more {
+                font-size: 10px;
+                white-space: nowrap;
+            }
+
+            .pagination-info {
+                padding: 22px 5px;
+                font-size: 10px;
+            }
+
+            .footer {
+                margin-top: 30px;
+                padding: 28px 17px 17px;
+            }
+
+            .footer-content {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 21px;
+                padding-bottom: 22px;
+            }
+
+            .footer h2 {
+                font-size: 21px;
+            }
+
+            .footer h3 {
+                font-size: 13px;
+                margin-bottom: 8px;
+            }
+
+            .footer p,
+            .footer a {
+                font-size: 11px;
+                line-height: 2;
+            }
+
+            .copyright {
+                padding-top: 13px;
+                font-size: 9px;
+                line-height: 1.7;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .logo h1 {
+                font-size: 20px;
+            }
+
+            nav {
+                padding-left: 7px;
+                padding-right: 7px;
+            }
+
+            nav a {
+                font-size: 10px;
+                padding: 9px 4px;
+            }
+
+            .section-title h2 {
+                font-size: 15px;
+            }
+
+            .card-content {
+                padding: 13px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topbar">
+        <span>இலங்கை செய்திகள் | கல்வி | அறிவு | முன்னேற்றம்</span>
+        <span>NEWSWEB.LK - உண்மை • நம்பிக்கை • முன்னேற்றம்</span>
+    </div>
+
+    <header class="header">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🌍</div>
+            <div>
+                <h1>NEWSWEB.LK</h1>
+                <p>உண்மை • நம்பிக்கை • முன்னேற்றம்</p>
+            </div>
+        </a>
+
+        <div class="header-right">
+            இலங்கையின் நம்பகமான செய்தித் தளம்<br>
+            கல்விச் செய்திகள் சிறப்புப் பகுதி
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">முகப்பு</a>
+        <a href="political.html">அரசியல்</a>
+        <a href="srilanka.html">இலங்கை</a>
+        <a href="economics.html">பொருளாதாரம்</a>
+        <a href="society.html">சமூகம்</a>
+        <a href="india.html">இந்தியா</a>
+        <a href="world.html">உலகம்</a>
+        <a href="sports.html">விளையாட்டு</a>
+        <a href="sports.html">வானிலை</a>
+        <a href="education.html" class="active">கல்வி</a>
+    </nav>
+
+    <div class="breaking">
+        <strong>கல்வி செய்திகள்</strong>
+        <p>இலங்கையின் பாடசாலைகள், பல்கலைக்கழகங்கள், பரீட்சைகள் மற்றும் கல்வி மறுசீரமைப்புத் தொடர்பான செய்திகள்</p>
+    </div>
+
+    <main class="container">
+
+        <div class="page-heading">
+            <h2>இலங்கை கல்விச் செய்திகள்</h2>
+            <p>கல்வி • பாடசாலைகள் • பல்கலைக்கழகங்கள் • பரீட்சைகள் • புலமைப்பரிசில்கள்</p>
+        </div>
+
+        <section class="hero">
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+                    alt="Sri Lankan education and classroom">
+            </div>
+
+            <div class="hero-content">
+                <span class="category">முக்கிய கல்விச் செய்தி</span>
+                <h2>இலங்கையின் கல்வித்துறையில் புதிய மாற்றங்கள்</h2>
+                <p>
+                    புதிய பாடத்திட்டம், டிஜிட்டல் கல்வி, ஆசிரியர் நியமனங்கள்
+                    மற்றும் மாணவர்களுக்கான புதிய கல்வி வாய்ப்புகள் பற்றிய
+                    முக்கிய தகவல்களை இங்கே அறிந்துகொள்ளுங்கள்.
+                </p>
+                <a href="https://www.govinfo.lk/2026/10/School-Timetables-for-Grades-1-to-13-From-2027.html"
+                    target="_blank" class="read-btn">முழுச் செய்தியை வாசிக்க</a>
+            </div>
+        </section>
+
+        <div class="section-title">
+            <h2>அனைத்துக் கல்விச் செய்திகள்</h2>
+            <span>19 செய்திகள்</span>
+        </div>
+
+        <section class="news-grid">
+
+            <!-- 1 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+                        alt="2027 முதல் புதிய கல்வி பாடத்திட்டம் அறிமுகம்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">கல்வி மறுசீரமைப்பு</span>
+                    <h3>2027 முதல் புதிய கல்வி பாடத்திட்டம் அறிமுகம்</h3>
+                    <p>இலங்கையின் புதிய கல்வி மறுசீரமைப்பு திட்டம் படிப்படியாக 2027 முதல் விரிவுபடுத்தப்படவுள்ளது.</p>
+                    <div class="meta">
+                        <span>28 October 2026</span>
+                        <a href="https://www.govinfo.lk/2026/10/School-Timetables-for-Grades-1-to-13-From-2027.html"
+                            target="_blank" rel="noopener noreferrer" class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 2 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+                        alt="2027 ஆம் ஆண்டுக்கான தரம் 1 வகுப்புகள் ஜனவரி 20 ஆரம்பம்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">பாடசாலைக் கல்வி</span>
+                    <h3>2027 ஆம் ஆண்டுக்கான தரம் 1 வகுப்புகள் ஜனவரி 20 ஆரம்பம்</h3>
+                    <p>2027 கல்வியாண்டில் தரம் 1 இற்கு சேர்க்கப்படும் மாணவர்களுக்கான வகுப்புகள் ஜனவரி 20
+                        ஆரம்பிக்கப்படவுள்ளதாக அறிவிக்கப்பட்டுள்ளது.</p>
+                    <div class="meta">
+                        <span>25 October 2026</span>
+                        <a href="https://www.sundaytimes.lk/261025/education/" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136"
+                        alt="23,000 ஆசிரியர் நியமனங்கள் டிசம்பரில்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">ஆசிரியர் நியமனம்</span>
+                    <h3>23,000 ஆசிரியர் நியமனங்கள் டிசம்பரில்</h3>
+                    <p>அரச பாடசாலைகளில் நிலவும் ஆசிரியர் வெற்றிடங்களை நிரப்புவதற்கான நியமன நடவடிக்கைகள்
+                        முன்னெடுக்கப்பட்டு வருகின்றன.</p>
+                    <div class="meta">
+                        <span>25 October 2026</span>
+                        <a href="https://www.sundaytimes.lk/261025/education/" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 4 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350"
+                        alt="பாடசாலைகளுக்கு Smart Classroom வசதிகள்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">தொழில்நுட்பக் கல்வி</span>
+                    <h3>பாடசாலைகளுக்கு Smart Classroom வசதிகள்</h3>
+                    <p>பாடசாலைகளில் Smart Classroom, இணைய வசதிகள் மற்றும் டிஜிட்டல் உபகரணங்களை வழங்கும் திட்டம்
+                        தொடர்பில் முன்னேற்றம் ஆராயப்பட்டுள்ளது.</p>
+                    <div class="meta">
+                        <span>23 October 2026</span>
+                        <a href="https://www.dailymirror.lk/news/article/1-353252" target="_blank"
+                            rel="noopener noreferrer" class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 5 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+                        alt="புதிய கல்வி மறுசீரமைப்புக்கான பள்ளி நேர அட்டவணை" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">பாடசாலை அறிவிப்பு</span>
+                    <h3>புதிய கல்வி மறுசீரமைப்புக்கான பள்ளி நேர அட்டவணை</h3>
+                    <p>தரம் 1 முதல் 13 வரையிலான மாணவர்களுக்கான புதிய பாடசாலை நேர அட்டவணை தொடர்பான சுற்றறிக்கை
+                        வெளியிடப்பட்டுள்ளது.</p>
+                    <div class="meta">
+                        <span>28 October 2026</span>
+                        <a href="https://www.govinfo.lk/2026/10/School-Timetables-for-Grades-1-to-13-From-2027.html"
+                            target="_blank" rel="noopener noreferrer" class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 6 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1427504494785-3f1f5f6f8f8f"
+                        alt="2026 கல்வி மறுசீரமைப்புத் திட்டம்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">கல்விக் கொள்கை</span>
+                    <h3>2026 கல்வி மறுசீரமைப்புத் திட்டம்</h3>
+                    <p>புதிய பாடத்திட்டம் மற்றும் மாணவர் மதிப்பீட்டு முறைகள் தொடர்பான கல்வி மறுசீரமைப்புத் திட்டம்
+                        முன்னெடுக்கப்பட்டுள்ளது.</p>
+                    <div class="meta">
+                        <span>October 2026</span>
+                        <a href="https://edureformfact.moe.gov.lk/faq/category/education-reforms-2026" target="_blank"
+                            rel="noopener noreferrer" class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 7 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173"
+                        alt="2026 க.பொ.த உயர்தரப் பரீட்சை" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">பரீட்சை</span>
+                    <h3>2026 க.பொ.த உயர்தரப் பரீட்சை</h3>
+                    <p>2026 ஆம் ஆண்டுக்கான உயர்தரப் பரீட்சை தொடர்பான தகவல்கள் பரீட்சைகள் திணைக்களத்தினால்
+                        வெளியிடப்பட்டுள்ளன.</p>
+                    <div class="meta">
+                        <span>August 2026</span>
+                        <a href="https://www.exams.gov.lk/examcalendar" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 8 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                        alt="2026 பொதுத் தகவல் தொழில்நுட்பப் பரீட்சை" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">GIT பரீட்சை</span>
+                    <h3>2026 பொதுத் தகவல் தொழில்நுட்பப் பரீட்சை</h3>
+                    <p>General Information Technology பரீட்சை தொடர்பான அறிவித்தல்கள் மற்றும் தகவல்களை பரீட்சைகள்
+                        திணைக்களத்தின் இணையத்தளத்தில் அறிந்துகொள்ளலாம்.</p>
+                    <div class="meta">
+                        <span>October 2026</span>
+                        <a href="https://doenets.lk/news" target="_blank" rel="noopener noreferrer" class="more">வாசிக்க
+                            →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 9 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8"
+                        alt="2026 க.பொ.த சாதாரண தரப் பரீட்சை அட்டவணை" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">O/L பரீட்சை</span>
+                    <h3>2026 க.பொ.த சாதாரண தரப் பரீட்சை அட்டவணை</h3>
+                    <p>2026 சாதாரண தரப் பரீட்சைக்கான கால அட்டவணை மற்றும் பரீட்சை அறிவித்தல்களை அதிகாரப்பூர்வ
+                        இணையத்தளத்தில் பார்வையிடலாம்.</p>
+                    <div class="meta">
+                        <span>2026</span>
+                        <a href="https://www.doenets.lk/examcalendar/" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 10 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+                        alt="புதிய பாடத்திட்டத்தில் தரம் 6 கல்வி" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">புதிய பாடத்திட்டம்</span>
+                    <h3>புதிய பாடத்திட்டத்தில் தரம் 6 கல்வி</h3>
+                    <p>2027 முதல் தரம் 6 மாணவர்களுக்கான புதிய பாடத்திட்டம் அறிமுகப்படுத்தப்படவுள்ளது.</p>
+                    <div class="meta">
+                        <span>2027 திட்டம்</span>
+                        <a href="https://www.govinfo.lk/2026/10/School-Timetables-for-Grades-1-to-13-From-2027.html"
+                            target="_blank" rel="noopener noreferrer" class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 11 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585"
+                        alt="பல்கலைக்கழக அனுமதி முறையில் புதிய திட்டம்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">உயர்கல்வி</span>
+                    <h3>பல்கலைக்கழக அனுமதி முறையில் புதிய திட்டம்</h3>
+                    <p>2028 முதல் ஒருங்கிணைந்த உயர்கல்வி அனுமதி முறை ஒன்றை அறிமுகப்படுத்துவது தொடர்பான திட்டம்
+                        முன்வைக்கப்பட்டுள்ளது.</p>
+                    <div class="meta">
+                        <span>October 2026</span>
+                        <a href="https://pulseline.lk/news-feature/sri-lanka-approves-new-curriculum-framework-rs-96-billion-school-digitalisation-plan/"
+                            target="_blank" rel="noopener noreferrer" class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 12 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1584697964358-3e14ca57658b"
+                        alt="பாடசாலை டிஜிட்டல் மயமாக்கல் திட்டம்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">டிஜிட்டல் கல்வி</span>
+                    <h3>பாடசாலை டிஜிட்டல் மயமாக்கல் திட்டம்</h3>
+                    <p>இலங்கையின் பாடசாலைகளுக்கு டிஜிட்டல் வசதிகளை மேம்படுத்தும் திட்டம் தொடர்பான தகவல்கள்
+                        வெளியிடப்பட்டுள்ளன.</p>
+                    <div class="meta">
+                        <span>October 2026</span>
+                        <a href="https://pulseline.lk/news-feature/sri-lanka-approves-new-curriculum-framework-rs-96-billion-school-digitalisation-plan/"
+                            target="_blank" rel="noopener noreferrer" class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 13 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173"
+                        alt="மாணவர்களுக்கான புதிய மதிப்பீட்டு முறை" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">மாணவர் மதிப்பீடு</span>
+                    <h3>மாணவர்களுக்கான புதிய மதிப்பீட்டு முறை</h3>
+                    <p>தரம் 1 முதல் 11 வரையிலான மாணவர்களின் கற்றல் திறன்களை மதிப்பிடுவதற்கான புதிய மதிப்பீட்டு
+                        கட்டமைப்பு அங்கீகரிக்கப்பட்டுள்ளது.</p>
+                    <div class="meta">
+                        <span>October 2026</span>
+                        <a href="https://pulseline.lk/news-feature/sri-lanka-approves-new-curriculum-framework-rs-96-billion-school-digitalisation-plan/"
+                            target="_blank" rel="noopener noreferrer" class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 14 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
+                        alt="இலங்கை Skills Expo 2026" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">தொழிற்கல்வி</span>
+                    <h3>இலங்கை Skills Expo 2026</h3>
+                    <p>தொழிற்கல்வி, வேலைவாய்ப்பு மற்றும் தொழில் வழிகாட்டல் தொடர்பான Skills Expo நிகழ்வு கொழும்பில்
+                        நடத்தப்பட்டது.</p>
+                    <div class="meta">
+                        <span>25 October 2026</span>
+                        <a href="https://www.sundaytimes.lk/261025/education/" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 15 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1"
+                        alt="பல்கலைக்கழகங்களில் மாணவர் பாதுகாப்பு விழிப்புணர்வு" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">பல்கலைக்கழகம்</span>
+                    <h3>பல்கலைக்கழகங்களில் மாணவர் பாதுகாப்பு விழிப்புணர்வு</h3>
+                    <p>களனி பல்கலைக்கழகத்தில் கற்றல் சூழலில் பாதுகாப்பு மற்றும் துன்புறுத்தல் தடுப்பு தொடர்பான
+                        விழிப்புணர்வு நிகழ்வு முன்னெடுக்கப்பட்டது.</p>
+                    <div class="meta">
+                        <span>25 October 2026</span>
+                        <a href="https://www.sundaytimes.lk/261025/education/" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 16 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a"
+                        alt="மாணவர் காப்புறுதித் திட்டத்தில் புதிய நன்மைகள்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">மாணவர் நலன்</span>
+                    <h3>மாணவர் காப்புறுதித் திட்டத்தில் புதிய நன்மைகள்</h3>
+                    <p>Suraksha மாணவர் காப்புறுதித் திட்டத்தில் புதிய நன்மைகளை உள்ளடக்கும் வகையில் திருத்தம் செய்ய
+                        அமைச்சரவை தீர்மானித்துள்ளது.</p>
+                    <div class="meta">
+                        <span>25 October 2026</span>
+                        <a href="https://www.sundaytimes.lk/261025/education/" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 17 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b"
+                        alt="இலங்கை மாணவர்களுக்கு வெளிநாட்டு புலமைப்பரிசில்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">புலமைப்பரிசில்</span>
+                    <h3>இலங்கை மாணவர்களுக்கு வெளிநாட்டு புலமைப்பரிசில்</h3>
+                    <p>கண்டானந்தா கல்லூரியைச் சேர்ந்த ஆறு மாணவர்களுக்கு சீனாவின் யுன்னான் பல்கலைக்கழகம் முழுமையான
+                        புலமைப்பரிசில்களை வழங்கவுள்ளது.</p>
+                    <div class="meta">
+                        <span>25 October 2026</span>
+                        <a href="https://www.sundaytimes.lk/261025/education/" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 18 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                        alt="தொழிற்கல்வி மற்றும் NVQ வாய்ப்புகள்" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">NVQ கல்வி</span>
+                    <h3>தொழிற்கல்வி மற்றும் NVQ வாய்ப்புகள்</h3>
+                    <p>தொழிற்கல்வி தகுதிகள் மூலம் உயர்கல்வி வாய்ப்புகளை விரிவுபடுத்துவது தொடர்பான முன்மொழிவுகள்
+                        ஆராயப்பட்டுள்ளன.</p>
+                    <div class="meta">
+                        <span>August 2026</span>
+                        <a href="https://www.sundaytimes.lk/260816/education/" target="_blank" rel="noopener noreferrer"
+                            class="more">வாசிக்க →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 19 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+                        alt="பாடசாலை மாணவர்களுக்கான ஆங்கிலக் கல்வி" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">மொழிக் கல்வி</span>
+                    <h3>பாடசாலை மாணவர்களுக்கான ஆங்கிலக் கல்வி</h3>
+                    <p>மாணவர்களின் மொழித் திறன்களை மேம்படுத்தும் வகையில் ஆங்கிலக் கல்வி மற்றும் தொடர்பாடல் திறன்களுக்கு
+                        முக்கியத்துவம் வழங்கப்படுகிறது.</p>
+                    <div class="meta">
+                        <span>கல்விச் சிறப்புக் கட்டுரை</span>
+                        <a href="https://moe.gov.lk/" target="_blank" rel="noopener noreferrer" class="more">வாசிக்க
+                            →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 20 -->
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585"
+                        alt="இலங்கையில் உயர்கல்வி மற்றும் தொழில்நுட்பக் கல்வி" loading="lazy"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400/e5eee5/17452e?text=Education+News'">
+                </div>
+                <div class="card-content">
+                    <span class="category">உயர்கல்வி</span>
+                    <h3>இலங்கையில் உயர்கல்வி மற்றும் தொழில்நுட்பக் கல்வி</h3>
+                    <p>தொழில்நுட்ப அறிவு மற்றும் தொழில்முறை திறன்களை வளர்ப்பதற்கான உயர்கல்வி வாய்ப்புகள் பற்றிய
+                        தகவல்கள்.</p>
+                    <div class="meta">
+                        <span>கல்விச் சிறப்புக் கட்டுரை</span>
+                        <a href="https://moe.gov.lk/" target="_blank" rel="noopener noreferrer" class="more">வாசிக்க
+                            →</a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <div class="pagination-info">
+            NEWSWEB.LK | இலங்கை கல்விச் செய்திகள்
+        </div>
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+                <h2>NEWSWEB.LK</h2>
+                <p>
+                    உண்மை • நம்பிக்கை • முன்னேற்றம்
+                    <br>
+                    இலங்கையின் கல்வி, சமூகம் மற்றும்
+                    நாட்டின் முன்னேற்றம் தொடர்பான செய்திகளை
+                    வழங்கும் செய்தித் தளம்.
+                </p>
+            </div>
+
+            <div>
+                <h3>முக்கிய பக்கங்கள்</h3>
+                <div class="footer-links">
+                    <a href="index.html">முகப்பு</a>
+                    <a href="srilanka.html">இலங்கை</a>
+                    <a href="education.html">கல்வி</a>
+                    <a href="world.html">உலகம்</a>
+                </div>
+            </div>
+
+            <div>
+                <h3>கல்வி தகவல்கள்</h3>
+                <div class="footer-links">
+                    <a href="https://moe.gov.lk/" target="_blank">கல்வி அமைச்சு</a>
+                    <a href="https://doenets.lk/" target="_blank">பரீட்சைகள் திணைக்களம்</a>
+                    <a href="https://www.exams.gov.lk/examcalendar" target="_blank">பரீட்சை அட்டவணை</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 NEWSWEB.LK. All Rights Reserved.
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

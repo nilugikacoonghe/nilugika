@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>பொருளாதாரம் - NEWSWEB.LK</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        :root {
+            --green: #12a85a;
+            --dark: #031a10;
+            --panel: #08291a;
+            --white: #f8fff9;
+            --muted: #b9d8c3;
+            --line: #236744
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+            scroll-behavior: smooth
+        }
+
+        body {
+            background: radial-gradient(ellipse at top, #0c3b24 0%, #031a10 48%, #010b06 100%);
+            color: var(--white);
+            font-family: 'Plus Jakarta Sans', 'Noto Sans Tamil', sans-serif;
+            min-height: 100vh;
+            padding: 24px
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        button,
+        input {
+            font: inherit
+        }
+
+        button {
+            cursor: pointer
+        }
+
+        img {
+            max-width: 100%
+        }
+
+        .container {
+            max-width: 1450px;
+            margin: auto
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 22px
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(145deg, #f8fff9, #cdeed7);
+            border: 2px solid #20d875;
+            color: #08743a;
+            font-size: 28px;
+            box-shadow: 0 0 20px #12a85a22
+        }
+
+        .logo h1 {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: .3px;
+            color: #f8fff9
+        }
+
+        .logo p {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            color: #b4d7c0;
+            font-size: 11px;
+            margin-top: 3px
+        }
+
+        .logo p span {
+            color: #45e88c
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: min(400px, 100%);
+            padding: 12px 17px;
+            border: 1px solid #31865a;
+            border-radius: 30px;
+            background: #052719
+        }
+
+        .search input {
+            width: 100%;
+            outline: none;
+            border: 0;
+            background: transparent;
+            color: #fff;
+            font-size: 16px
+        }
+
+        .search input::placeholder {
+            color: #a8cdb5
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px
+        }
+
+        .circle-btn {
+            width: 42px;
+            height: 42px;
+            border: 1px solid #31865a;
+            border-radius: 50%;
+            background: #07321e;
+            color: #fff;
+            font-size: 20px
+        }
+
+        .nav {
+            display: flex;
+            gap: 7px;
+            overflow-x: auto;
+            padding: 10px 0 16px;
+            margin-bottom: 20px;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line)
+        }
+
+        .nav a {
+            padding: 9px 15px;
+            border-radius: 24px;
+            white-space: nowrap;
+            color: #e4f5e9;
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 13px
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            background: #0fa75a;
+            color: white
+        }
+
+        .heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 15px 0 22px
+        }
+
+        .heading h2 {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: clamp(24px, 3vw, 35px)
+        }
+
+        .heading p {
+            margin-top: 9px;
+            color: var(--muted);
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 13px;
+            line-height: 1.9
+        }
+
+        .kicker {
+            color: #43e58a;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px
+        }
+
+        .count {
+            padding: 9px 14px;
+            background: #0d3822;
+            border: 1px solid var(--line);
+            border-radius: 25px;
+            color: #b7f5ca;
+            font-size: 12px
+        }
+
+        .featured {
+            display: grid;
+            grid-template-columns: 1.65fr 1fr;
+            gap: 17px
+        }
+
+        .hero {
+            position: relative;
+            height: 470px;
+            overflow: hidden;
+            border: 1px solid #31865a;
+            border-radius: 19px;
+            cursor: pointer;
+            background: #000
+        }
+
+        .hero img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s
+        }
+
+        .hero:hover img {
+            transform: scale(1.04)
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            padding: 27px;
+            background: linear-gradient(0deg, #010c07 0%, #010c07e8 24%, #010c0740 57%, transparent 100%)
+        }
+
+        .meta {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 11px;
+            color: #64ef9b;
+            margin-bottom: 9px
+        }
+
+        .hero h3 {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: clamp(21px, 2.5vw, 31px);
+            line-height: 1.7
+        }
+
+        .hero p {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 12px;
+            line-height: 1.9;
+            margin-top: 8px;
+            color: #e1f0e6
+        }
+
+        .hero-cta {
+            display: inline-block;
+            margin-top: 14px;
+            background: #0fa75a;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 22px;
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 11px;
+            width: max-content
+        }
+
+        .featured-side {
+            padding: 19px;
+            border: 1px solid var(--line);
+            border-radius: 19px;
+            background: #041b11
+        }
+
+        .section-title {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 16px;
+            color: #86e8a6;
+            margin-bottom: 12px
+        }
+
+        .side-item {
+            display: grid;
+            grid-template-columns: 1fr 100px;
+            gap: 12px;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #17432a;
+            cursor: pointer
+        }
+
+        .side-item:last-child {
+            border-bottom: 0
+        }
+
+        .side-item h3 {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 12px;
+            line-height: 1.8
+        }
+
+        .side-img {
+            height: 68px;
+            border-radius: 9px;
+            overflow: hidden
+        }
+
+        .side-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .section-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 26px 0 15px
+        }
+
+        .section-bar h2 {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 20px
+        }
+
+        .filters {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap
+        }
+
+        .filter {
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: #092d1b;
+            color: #c7e5d0;
+            font-size: 11px
+        }
+
+        .filter:hover,
+        .filter.active {
+            background: #10a75a;
+            color: #fff
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px
+        }
+
+        .news-card {
+            overflow: hidden;
+            border: 1px solid #236744;
+            border-radius: 15px;
+            background: #f7fff9;
+            color: #102a1a;
+            transition: transform .2s, box-shadow .2s
+        }
+
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px #0005
+        }
+
+        .card-image {
+            height: 175px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: #dcebe0
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s
+        }
+
+        .card-image:hover img {
+            transform: scale(1.06)
+        }
+
+        .card-category {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #07572eea;
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 10px
+        }
+
+        .card-body {
+            padding: 14px
+        }
+
+        .card-date {
+            font-size: 10px;
+            color: #267347;
+            margin-bottom: 8px
+        }
+
+        .card-body h3 {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 13px;
+            line-height: 1.9;
+            min-height: 52px;
+            margin-bottom: 9px
+        }
+
+        .card-body p {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 11px;
+            line-height: 1.9;
+            color: #486452;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 12px;
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            color: #078343;
+            cursor: pointer
+        }
+
+        .no-results {
+            display: none;
+            padding: 30px;
+            text-align: center;
+            font-family: 'Noto Sans Tamil', sans-serif
+        }
+
+        .footer {
+            text-align: center;
+            border-top: 1px solid var(--line);
+            margin-top: 30px;
+            padding: 22px 0;
+            color: #b3d1bd;
+            font-size: 12px;
+            line-height: 2
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #000d;
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            padding: 20px
+        }
+
+        .modal.show {
+            display: flex
+        }
+
+        .modal-box {
+            width: min(850px, 100%);
+            max-height: 94vh;
+            overflow: auto;
+            background: #f7fff9;
+            color: #102a1a;
+            border-radius: 18px;
+            position: relative
+        }
+
+        .modal-image {
+            height: min(48vh, 420px);
+            background: #031a10
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .close {
+            position: absolute;
+            right: 13px;
+            top: 13px;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid #ffffff80;
+            background: #032416e8;
+            color: white;
+            font-size: 26px
+        }
+
+        .modal-content {
+            padding: 25px
+        }
+
+        .modal-category {
+            color: #078343;
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 12px;
+            margin-bottom: 10px
+        }
+
+        .modal-content h2 {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: clamp(20px, 3vw, 28px);
+            line-height: 1.8;
+            margin-bottom: 12px
+        }
+
+        .modal-content p {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 14px;
+            line-height: 2;
+            color: #345340
+        }
+
+        .source-link {
+            display: inline-block;
+            margin-top: 20px;
+            background: #078343;
+            color: white;
+            border-radius: 25px;
+            padding: 12px 18px;
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 12px
+        }
+
+        body.modal-open {
+            overflow: hidden
+        }
+
+        @media(max-width:1100px) {
+            .news-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            .featured {
+                grid-template-columns: 1fr
+            }
+
+            .hero {
+                height: 430px
+            }
+        }
+
+        @media(hover:none) {
+
+            .hero:hover img,
+            .card-image:hover img {
+                transform: none
+            }
+
+            .news-card:hover {
+                transform: none;
+                box-shadow: none
+            }
+        }
+
+        @media(max-width:750px) {
+            body {
+                padding: 10px;
+                padding-left: max(10px, env(safe-area-inset-left));
+                padding-right: max(10px, env(safe-area-inset-right));
+                padding-bottom: max(10px, env(safe-area-inset-bottom))
+            }
+
+            .logo h1 {
+                font-size: 21px
+            }
+
+            .logo-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 22px
+            }
+
+            .header {
+                align-items: flex-start;
+                gap: 12px;
+                margin-bottom: 14px
+            }
+
+            .header-actions {
+                margin-left: auto
+            }
+
+            .search {
+                order: 3;
+                width: 100%
+            }
+
+            .nav {
+                position: sticky;
+                top: 0;
+                z-index: 50;
+                background: #031a10f2;
+                backdrop-filter: blur(6px);
+                margin: 0 -10px 16px;
+                padding: 8px 10px 10px;
+                scrollbar-width: none;
+                -webkit-overflow-scrolling: touch
+            }
+
+            .nav::-webkit-scrollbar {
+                display: none
+            }
+
+            .nav a {
+                padding: 10px 14px;
+                min-height: 40px;
+                display: inline-flex;
+                align-items: center
+            }
+
+            .heading {
+                margin: 8px 0 16px
+            }
+
+            .news-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .hero {
+                height: auto;
+                min-height: 360px
+            }
+
+            .hero-overlay {
+                padding: 16px
+            }
+
+            .hero h3 {
+                font-size: 20px;
+                line-height: 1.6
+            }
+
+            .side-item {
+                grid-template-columns: 1fr 85px
+            }
+
+            .section-bar {
+                margin: 20px 0 12px
+            }
+
+            .filters {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                width: 100%;
+                padding-bottom: 6px;
+                scrollbar-width: none;
+                -webkit-overflow-scrolling: touch
+            }
+
+            .filters::-webkit-scrollbar {
+                display: none
+            }
+
+            .filter {
+                white-space: nowrap;
+                flex-shrink: 0;
+                min-height: 40px;
+                padding: 8px 14px
+            }
+
+            .card-image {
+                height: 150px
+            }
+
+            .card-body {
+                padding: 12px
+            }
+
+            .card-body h3 {
+                min-height: 0;
+                font-size: 12.5px
+            }
+
+            .read-more {
+                padding: 6px 0
+            }
+        }
+
+        @media(max-width:480px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+                gap: 14px
+            }
+
+            .card-image {
+                height: 200px
+            }
+
+            .card-body h3 {
+                font-size: 14px
+            }
+
+            .card-body p {
+                font-size: 12px
+            }
+
+            .hero {
+                min-height: 390px
+            }
+
+            .featured-side {
+                padding: 13px
+            }
+
+            .side-item {
+                padding: 14px 0
+            }
+
+            .side-img {
+                height: 64px
+            }
+
+            .footer {
+                padding: 18px 0 8px
+            }
+
+            .modal {
+                padding: 0;
+                align-items: flex-end
+            }
+
+            .modal-box {
+                width: 100%;
+                max-height: 92vh;
+                max-height: 92dvh;
+                border-radius: 18px 18px 0 0
+            }
+
+            .modal-image {
+                height: 220px
+            }
+
+            .modal-content {
+                padding: 17px
+            }
+
+            .modal-content p {
+                font-size: 13.5px;
+                line-height: 1.9
+            }
+
+            .source-link {
+                display: block;
+                text-align: center
+            }
+
+            .close {
+                width: 44px;
+                height: 44px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="header">
+            <a href="index.html" class="logo" aria-label="NEWSWEB.LK முகப்பு">
+                <div class="logo-icon">🌍</div>
+                <div>
+                    <h1>NEWSWEB.LK</h1>
+                    <p>உண்மை <span>•</span> நம்பிக்கை <span>•</span> முன்னேற்றம்</p>
+                </div>
+            </a>
+            <form class="search" onsubmit="event.preventDefault();filterNews();">
+                <span>⌕</span><input id="searchInput" type="search" placeholder="செய்திகளைத் தேடுங்கள்...">
+            </form>
+            <div class="header-actions">
+                <button class="circle-btn" type="button" onclick="window.location.href='index.html'"
+                    title="முகப்பு">⌂</button>
+                <button class="circle-btn" type="button"
+                    onclick="document.querySelector('.nav').scrollIntoView({behavior:'smooth'})" title="மெனு">☰</button>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <a href="index.html">முகப்பு</a>
+            <a href="political.html">அரசியல்</a>
+            <a href="srilanka.html">இலங்கை</a>
+            <a href="porulaadharam.html" class="active">பொருளாதாரம்</a>
+            <a href="india.html">இந்தியா</a>
+            <a href="world.html">உலகம்</a>
+            <a href="vilayaattu.html">விளையாட்டு</a>
+            <a href="education.html">கல்வி</a>
+        </nav>
+
+        <section class="heading">
+            <div>
+                <div class="kicker">SRI LANKA • ECONOMY NEWS</div>
+                <h2>இலங்கை பொருளாதாரச் செய்திகள்</h2>
+                <p>ரூபாய், வங்கிகள், விலைவாசி, ஏற்றுமதி மற்றும் வணிகச் செய்திகள்.</p>
+            </div>
+            <span class="count" id="countBadge"></span>
+        </section>
+
+        <!-- FEATURED (JS fills) -->
+        <section class="featured">
+            <article class="hero" id="heroBox" onclick="openNews(0)" tabindex="0" role="button"
+                aria-label="முக்கிய செய்தியைத் திறக்கவும்"></article>
+            <aside class="featured-side">
+                <h2 class="section-title">சமீபத்திய பொருளாதாரச் செய்திகள்</h2>
+                <div id="sideBox"></div>
+            </aside>
+        </section>
+
+        <div class="section-bar">
+            <h2>அனைத்து பொருளாதாரச் செய்திகள்</h2>
+            <div class="filters">
+                <button class="filter active" data-category="all">அனைத்தும்</button>
+                <button class="filter" data-category="நாணயம்">நாணயம்</button>
+                <button class="filter" data-category="வங்கிகள்">வங்கிகள்</button>
+                <button class="filter" data-category="விலைவாசி">விலைவாசி</button>
+                <button class="filter" data-category="ஏற்றுமதி">ஏற்றுமதி</button>
+                <button class="filter" data-category="சுற்றுலா">சுற்றுலா</button>
+            </div>
+        </div>
+
+        <section class="news-grid" id="newsGrid"></section>
+        <div class="no-results" id="noResults">செய்திகள் எதுவும் கிடைக்கவில்லை.</div>
+
+        <footer class="footer"><strong>NEWSWEB.LK</strong><br>உண்மை • நம்பிக்கை • முன்னேற்றம்<br>© NEWSWEB.LK</footer>
+    </div>
+
+    <div class="modal" id="newsModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
+        onclick="closeOutside(event)">
+        <div class="modal-box">
+            <button class="close" onclick="closeNews()" aria-label="மூடு">&times;</button>
+            <div class="modal-image"><img id="modalImage" src="" alt=""></div>
+            <div class="modal-content">
+                <div class="modal-category" id="modalCategory"></div>
+                <h2 id="modalTitle"></h2>
+                <div class="meta" id="modalDate" style="color:#267347"></div>
+                <p id="modalDescription"></p>
+                <a id="modalSource" class="source-link" href="#" target="_blank" rel="noopener noreferrer">அதிகாரப்பூர்வ
+                    மூலத்தைப் பார்க்கவும் ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const U = (id) => 'https://images.unsplash.com/' + id + '?auto=format&fit=crop&w=1000&q=85';
+        const FALLBACK = 'https://placehold.co/1000x600/0c3b24/f8fff9?text=NEWSWEB.LK';
+
+        const newsData = [
+            {title: 'இலங்கையின் வெளிநாட்டுச் செலாவணி கையிருப்பு 6.9 பில்லியன் டொலராக உயர்வு', category: 'நாணயம்', date: '23-10-2026', image: U('photo-1554224155-6726b3ff858f'), description: 'இலங்கையின் வெளிநாட்டுச் செலாவணி கையிருப்பு, ரூபாயின் பெறுமதி மற்றும் நாணயச் சந்தை நிலவரங்களைப் பற்றிய தகவல்கள். இந்தத் தலைப்பின் சமீபத்திய அதிகாரப்பூர்வ விவரங்களை மத்திய வங்கியின் வெளியீடுகளில் சரிபார்க்கவும்.', source: 'https://www.cbsl.gov.lk/'},
+            {title: 'இலங்கை ரூபாய் நோட்டுகள் மற்றும் பணப்புழக்கம்', category: 'நாணயம்', date: '23-10-2026', image: U('photo-1580519542036-c47de6196ba5'), description: 'நாட்டின் நாணயப் புழக்கம், ரூபாயின் பெறுமதி மற்றும் நிதிச் சந்தை நிலவரங்கள் பற்றிய தகவல்கள்.', source: 'https://www.cbsl.gov.lk/'},
+            {title: 'கொழும்பு சந்தையில் அத்தியாவசியப் பொருட்களின் விலைகள்', category: 'விலைவாசி', date: '22-10-2026', image: U('photo-1542838132-92c53300491e'), description: 'அத்தியாவசிய உணவுப் பொருட்களின் விலைகள் மற்றும் நுகர்வோர் செலவின மாற்றங்கள் தொடர்பான தகவல்கள்.', source: 'https://www.statistics.gov.lk/'},
+            {title: 'மத்திய வங்கியின் நாணயக் கொள்கை', category: 'வங்கிகள்', date: '22-10-2026', image: U('photo-1501167786227-4cba60f6d58f'), description: 'வட்டி வீதங்கள், பணவீக்கம் மற்றும் நாணயக் கொள்கை தொடர்பான மத்திய வங்கியின் அறிவிப்புகளை அறியலாம்.', source: 'https://www.cbsl.gov.lk/'},
+            {title: 'இலங்கையின் துறைமுக வர்த்தக நடவடிக்கைகள்', category: 'ஏற்றுமதி', date: '21-10-2026', image: U('photo-1494412574643-ff11b0a5c1c3'), description: 'ஏற்றுமதி, இறக்குமதி மற்றும் துறைமுக நடவடிக்கைகள் இலங்கையின் பொருளாதாரத்தில் முக்கிய பங்கு வகிக்கின்றன.', source: 'https://www.srilankabusiness.com/'},
+            {title: 'சந்தையில் பணம் எண்ணும் வணிகர்', category: 'வணிகம்', date: '21-10-2026', image: U('photo-1556742049-0cfed4f6a45d'), description: 'சிறு வணிகங்கள், பணப்பரிமாற்றங்கள் மற்றும் உள்ளூர் வர்த்தகத்தின் வளர்ச்சி தொடர்பான தகவல்கள்.', source: 'https://www.cbsl.gov.lk/'},
+            {title: 'இலங்கையின் வெளிநாட்டு முதலீட்டு வாய்ப்புகள்', category: 'முதலீடு', date: '20-10-2026', image: U('photo-1486406146926-c627a92ad1ab'), description: 'முதலீட்டுச் சூழல், புதிய வணிக வாய்ப்புகள் மற்றும் நாட்டின் நீண்டகால பொருளாதார வளர்ச்சி பற்றிய செய்திகள்.', source: 'https://investsrilanka.com/'},
+            {title: 'உலக வங்கி மற்றும் இலங்கையின் பொருளாதாரம்', category: 'சர்வதேசம்', date: '20-10-2026', image: U('photo-1450101499163-c8848c66ca85'), description: 'சர்வதேச நிதி நிறுவனங்களின் அறிக்கைகள் மற்றும் இலங்கையின் பொருளாதார நிலை குறித்த தகவல்கள்.', source: 'https://www.worldbank.org/en/country/srilanka'},
+            {title: 'சர்வதேச நாணய நிதியத்தின் பொருளாதாரத் திட்டங்கள்', category: 'IMF', date: '19-10-2026', image: U('photo-1579532537598-459ecdaf39cc'), description: 'சர்வதேச நாணய நிதியத்துடன் தொடர்புடைய பொருளாதாரத் திட்டங்கள் மற்றும் அவற்றின் முன்னேற்றம் பற்றிய தகவல்கள்.', source: 'https://www.imf.org/en/Countries/LKA'},
+            {title: 'இலங்கையின் பணவீக்கம் மற்றும் குடும்பச் செலவுகள்', category: 'பணவீக்கம்', date: '19-10-2026', image: U('photo-1554260570-e9689a3418b8'), description: 'குடும்பச் செலவுகள், நுகர்வோர் விலைகள் மற்றும் பணவீக்கத் தரவுகள் பற்றிய தகவல்கள்.', source: 'https://www.statistics.gov.lk/'},
+            {title: 'எரிபொருள் சந்தை மற்றும் உலக எண்ணெய் விலைகள்', category: 'எரிசக்தி', date: '18-10-2026', image: U('photo-1545262810-77515befe149'), description: 'எரிசக்தி இறக்குமதி மற்றும் சர்வதேச எண்ணெய் விலைகளின் பொருளாதாரத் தாக்கங்களைப் பற்றிய செய்திகள்.', source: 'https://www.cbsl.gov.lk/'},
+            {title: 'இலங்கையின் சுற்றுலாத்துறை வருமானம்', category: 'சுற்றுலா', date: '18-10-2026', image: U('photo-1586500036706-41963de24d8b'), description: 'சுற்றுலாப் பயணிகள், ஹோட்டல்கள் மற்றும் சுற்றுலாத்துறை மூலம் கிடைக்கும் வருமானம் தொடர்பான தகவல்கள்.', source: 'https://www.sltda.gov.lk/'},
+            {title: 'கொழும்பு பங்குச் சந்தை நிலவரம்', category: 'பங்குச்சந்தை', date: '17-10-2026', image: U('photo-1590283603385-17ffb3a7f29f'), description: 'பங்குச் சந்தை குறியீடுகள், நிறுவனப் பங்குகள் மற்றும் முதலீட்டுச் சந்தை தொடர்பான தகவல்கள்.', source: 'https://www.cse.lk/'},
+            {title: 'இலங்கையின் தொழில்துறை உற்பத்தி', category: 'தொழில்துறை', date: '17-10-2026', image: U('photo-1581091226825-a6a2a5aee158'), description: 'உற்பத்தித் துறை, தொழிற்சாலைகள் மற்றும் நாட்டின் தொழில்துறை நடவடிக்கைகள் தொடர்பான செய்திகள்.', source: 'https://www.statistics.gov.lk/'},
+            {title: 'கட்டுமானத் துறையில் புதிய வணிக வாய்ப்புகள்', category: 'கட்டுமானம்', date: '16-10-2026', image: U('photo-1504307651254-35680f356dfd'), description: 'கட்டுமானப் பணிகள், கட்டிடப் பொருட்கள் மற்றும் உட்கட்டமைப்பு முதலீடுகள் தொடர்பான தகவல்கள்.', source: 'https://www.cbsl.gov.lk/'},
+            {title: 'இலங்கையின் வேலைவாய்ப்பு மற்றும் தொழிலாளர் சந்தை', category: 'வேலைவாய்ப்பு', date: '16-10-2026', image: U('photo-1521737711867-e3b97375f902'), description: 'வேலைவாய்ப்புகள், தொழிலாளர் பங்கேற்பு மற்றும் தொழில் சந்தை நிலவரங்கள் தொடர்பான செய்திகள்.', source: 'https://www.statistics.gov.lk/'},
+            {title: 'வாகன இறக்குமதி மற்றும் உள்ளூர் சந்தை', category: 'இறக்குமதி', date: '15-10-2026', image: U('photo-1492144534655-ae79c964c9d7'), description: 'வாகன இறக்குமதி, போக்குவரத்துச் செலவுகள் மற்றும் உள்ளூர் வாகனச் சந்தை பற்றிய தகவல்கள்.', source: 'https://www.cbsl.gov.lk/'},
+            {title: 'வெளிநாட்டில் பணிபுரியும் இலங்கையர்களின் பணப்பரிமாற்றம்', category: 'வெளிநாட்டுப் பணம்', date: '15-10-2026', image: U('photo-1559526324-4b87b5e36e44'), description: 'வெளிநாட்டில் பணிபுரியும் இலங்கையர்கள் நாட்டுக்கு அனுப்பும் பணம் மற்றும் அதன் பொருளாதார முக்கியத்துவம் பற்றிய தகவல்கள்.', source: 'https://www.cbsl.gov.lk/'},
+            {title: 'இலங்கையின் விவசாயம் மற்றும் உணவு உற்பத்தி', category: 'விவசாயம்', date: '14-10-2026', image: U('photo-1500382017468-9049fed747ef'), description: 'விவசாய உற்பத்தி, உணவுப் பாதுகாப்பு மற்றும் விவசாயிகளின் பொருளாதார நிலை தொடர்பான செய்திகள்.', source: 'https://www.statistics.gov.lk/'},
+            {title: 'இலங்கையின் தேயிலை மற்றும் ஏற்றுமதி வர்த்தகம்', category: 'தேயிலை', date: '14-10-2026', image: U('photo-1563911892437-1feda0179e1b'), description: 'இலங்கைத் தேயிலை உற்பத்தி, சர்வதேச சந்தை மற்றும் ஏற்றுமதி வாய்ப்புகள் தொடர்பான தகவல்கள்.', source: 'https://www.srilankabusiness.com/'},
+            {title: 'இலங்கையின் டிஜிட்டல் பொருளாதாரம் மற்றும் புதிய தொழில்நுட்பம்', category: 'தொழில்நுட்பம்', date: '13-10-2026', image: U('photo-1516321318423-f06f85e504b3'), description: 'டிஜிட்டல் சேவைகள், இணைய வர்த்தகம் மற்றும் தொழில்நுட்பத் துறையின் பொருளாதார வாய்ப்புகள் பற்றிய செய்திகள்.', source: 'https://www.cbsl.gov.lk/'}
+        ];
+
+        function esc(v) {
+            return String(v).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+        }
+
+        const imgFail = "this.onerror=null;this.src='" + FALLBACK + "'";
+
+        /* BUILD PAGE */
+        function build() {
+            document.getElementById('countBadge').textContent = newsData.length + ' செய்தி அட்டைகள்';
+
+            const h = newsData[0];
+            document.getElementById('heroBox').innerHTML =
+                '<img src="' + esc(h.image) + '" alt="' + esc(h.title) + '" onerror="' + imgFail + '">' +
+                '<div class="hero-overlay">' +
+                '<div class="meta">' + esc(h.category) + ' • ' + esc(h.date) + '</div>' +
+                '<h3>' + esc(h.title) + '</h3>' +
+                '<p>' + esc(h.description) + '</p>' +
+                '<span class="hero-cta">முழுச் செய்தியைப் படிக்க →</span></div>';
+
+            let side = '';
+            for (let i = 1; i <= 4; i++) {
+                const n = newsData[i];
+                side += '<article class="side-item" onclick="openNews(' + i + ')" tabindex="0" role="button">' +
+                    '<div><div class="meta">' + esc(n.category) + ' • ' + esc(n.date) + '</div>' +
+                    '<h3>' + esc(n.title) + '</h3></div>' +
+                    '<div class="side-img"><img src="' + esc(n.image) + '" alt="' + esc(n.title) + '" loading="lazy" onerror="' + imgFail + '"></div>' +
+                    '</article>';
+            }
+            document.getElementById('sideBox').innerHTML = side;
+
+            let cards = '';
+            newsData.forEach((n, i) => {
+                cards += '<article class="news-card" data-title="' + esc(n.title) + '" data-category="' + esc(n.category) + '">' +
+                    '<div class="card-image" onclick="openNews(' + i + ')">' +
+                    '<img src="' + esc(n.image) + '" alt="' + esc(n.title) + '" loading="lazy" onerror="' + imgFail + '">' +
+                    '<span class="card-category">' + esc(n.category) + '</span></div>' +
+                    '<div class="card-body"><div class="card-date">' + esc(n.date) + '</div>' +
+                    '<h3>' + esc(n.title) + '</h3>' +
+                    '<p>' + esc(n.description) + '</p>' +
+                    '<span class="read-more" onclick="openNews(' + i + ')">முழுச் செய்தியைப் படிக்க →</span></div>' +
+                    '</article>';
+            });
+            document.getElementById('newsGrid').innerHTML = cards;
+
+            document.querySelectorAll('.hero,.side-item').forEach(function (item) {
+                item.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {e.preventDefault(); item.click();}
+                });
+            });
+        }
+
+        /* MODAL */
+        function openNews(index) {
+            const item = newsData[index];
+            if (!item) return;
+            const img = document.getElementById('modalImage');
+            img.onerror = function () {img.onerror = null; img.src = FALLBACK;};
+            img.src = item.image;
+            img.alt = item.title;
+            document.getElementById('modalCategory').textContent = item.category;
+            document.getElementById('modalTitle').textContent = item.title;
+            document.getElementById('modalDate').textContent = 'தேதி: ' + item.date;
+            document.getElementById('modalDescription').textContent = item.description;
+            const link = document.getElementById('modalSource');
+            link.href = item.source;
+            link.textContent = 'தொடர்புடைய அதிகாரப்பூர்வ இணையதளம் ↗';
+            document.getElementById('newsModal').classList.add('show');
+            document.body.classList.add('modal-open');
+        }
+
+        function closeNews() {
+            document.getElementById('newsModal').classList.remove('show');
+            document.body.classList.remove('modal-open');
+        }
+
+        function closeOutside(event) {
+            if (event.target.id === 'newsModal') closeNews();
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeNews();
+        });
+
+        /* SEARCH + FILTER */
+        let selectedCategory = 'all';
+
+        function filterNews() {
+            const q = document.getElementById('searchInput').value.trim().toLocaleLowerCase();
+            let visible = 0;
+            document.querySelectorAll('.news-card').forEach(function (card) {
+                const t = card.dataset.title.toLocaleLowerCase();
+                const cat = card.dataset.category;
+                const d = card.querySelector('p').textContent.toLocaleLowerCase();
+                const show = (t.includes(q) || d.includes(q)) && (selectedCategory === 'all' || cat === selectedCategory);
+                card.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+            document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+        }
+
+        document.getElementById('searchInput').addEventListener('input', filterNews);
+
+        document.querySelectorAll('.filter').forEach(function (button) {
+            button.addEventListener('click', function () {
+                document.querySelectorAll('.filter').forEach(function (b) {b.classList.remove('active');});
+                button.classList.add('active');
+                selectedCategory = button.dataset.category;
+                filterNews();
+            });
+        });
+
+        build();
+    </script>
+</body>
+
+</html>
